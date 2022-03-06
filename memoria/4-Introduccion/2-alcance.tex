@@ -1,0 +1,83 @@
+\section{Alcance}
+
+% \urgent[inline]{El alcance debe explicar aquellas cosas que planteas hacer
+% para el proyecto. Lo que podrías llamar como “tareas”. Procura explicar de
+% manera detallada todo esto}
+
+% \change[inline]{Vamos a crear un nuevo lenguaje enfocado a la generación de
+% modelos de sistemas dinámicos discretos.}
+
+El alcance de este proyecto incluye el trabajo necesario para diseñar,
+implementar y documentar los analizadores léxico, sintáctico y semántico de un
+nuevo lenguaje de programación enfocado en la agilización del desarrollo de
+modelos de simulación dinámicos discretos basados en eventos.
+
+% \change[inline]{Dicho lenguaje lo traduciremos a Python, por lo que debemos
+% crear un transpilador.} \change[inline]{Usaremos las herramientas de
+% desarrollo de compiladores Flex y Bison}
+
+Dicho lenguaje será convertido a código Python, por lo que se incluirá una serie
+de funciones y módulos adicionales que funcionarán a modo de librería básica del
+programa una vez traducido éste. Por tanto, para poder generar este
+transpilador, haremos uso de las herramientas de desarrollo de compiladores Flex
+y Bison.
+
+% \change[inline]{Usaremos Kanban para planificar y gestionar el proyecto}
+
+Por último, la gestión del proyecto se realizará siguiendo la metodología de
+desarrollo ágil Kanban para permitir construir de manera iterativa las distintas
+funcionalidades del proyecto. \improvement{Un poco crudo, ¿quizás puedes decir
+un poco más al respecto?}
+
+\section{Objetivos}
+
+Conocido ya el alcance, podemos proceder a dar la lista de objetivos principales
+del proyecto: \improvement{Así como lista no me convence mucho, revisa si puedes
+convertirlo a subsecciones con nombres relevantes (gestión, diseño,
+desarrollo...)}
+
+\begin{itemize}
+    \item Hacer uso del método Kanban para el desarrollo y gestión del proyecto.
+
+    \item Diseñar un nuevo lenguaje de programación inspirado en el léxico y
+    sintaxis de Flex, Bison y Python. Dicho lenguaje nos permitirá implementar
+    simuladores de sistemas dinámicos discretos cuyos diseños estarán basados en
+    eventos, pero se podrán implementar otros tipos de diseños a través de
+    estos. Se debe permitir la rápida implementación de este tipo de modelos a
+    través de grafos de sucesos.
+
+    \item Hacer uso de las herramientas de generación de compiladores Flex y
+    Bison con el fin de construir los analizadores léxico, sintáctico y
+    semántico del nuevo lenguaje.
+
+    \item Permitir que la traducción del lenguaje incluya dentro del fichero
+    generado las estructuras de datos, funciones y procedimientos que tienen en
+    común todos los sistemas dinámicos discretos:
+    \begin{itemize}
+        \item Generadores de datos aleatorios para distintos tipos de
+        distribuciones.
+        \item Reloj y temporizador de simulación para ejecutar los eventos.
+        \item Estructura de datos para almacenar los sucesos según deben ocurrir
+        en el tiempo.
+        \item Las respectivas implementaciones mínimas de los dos eventos que
+        siempre formarán parte de todos los modelos: “Inicio” y “Fin”.
+        \item Generador de informes final que se ejecutará al finalizar la
+        simulación y mostrará los resultados que se deseaban estudiar con ésta.
+    \end{itemize}
+
+    \item Permitir que el programador del lenguaje se encarge sólo de realizar
+    las implementaciones pertinentes al sistema de simulación que desee
+    desarrollar:
+    \begin{itemize}
+        \item Especificación de las variables globales, variables de entrada,
+        contadores estadísticos y medidas de rendimiento propias del modelo.
+        \item Inclusión de eventos adicionales y sus acciones correspondientes.
+        \item Creación y eliminación de eventos en función de tiempo y
+        condicionales lógicas.
+        \item Inclusión de código adicional escrito directamente en Python en
+        caso de ser necesario.
+    \end{itemize}
+
+    \item Permitir la configuración del comportamiento del programa traducido a
+    través de parámetros de entrada.
+\end{itemize}

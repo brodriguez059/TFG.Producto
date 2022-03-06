@@ -1,0 +1,99 @@
+\chapter{Introducción}\label{ch:introduccion}
+
+% Bloque simulación de sistemas \change[inline]{Deberías hablar aquí de la
+% simulación de sistemas}
+El modelado matemático o modelado analítico se aprovecha de las características
+del problema cuya respuesta se desea obtener para llegar a la mejor conclusión.
+Sin embargo, muchas veces nos encontraremos con problemas que no se pueden
+modelar analíticamente debido a su complejidad en tiempo o espacio. En estas
+situaciones, debemos hacer uso de técnicas de aproximación de resultados para
+dar con soluciones que, aunque no se pueden garantizar óptimas, sí que se pueden
+considerar lo suficientemente buenas. Una de estas técnicas vendría a ser la
+simulación de sistemas, la cual a través de modelado simbólico/lógico intenta
+reproducir el comportamiento de un determinado sistema con el fin de analizar
+una serie de resultados a escoger.
+
+% \change[inline]{¿Qué podría decir que es un modelo de simulación brevemente?
+% (Menciona que más adelante explicarás más al respecto)} \change[inline]{¿Por
+% qué y para qué la simulación de sistemas?} % Igual esto se va a contexto
+Nosotros hablaremos de una definición más exacta de “Simulación de Sistemas” y
+“Modelado” más adelante, pero por ahora podemos citar la definición encontrada
+en \cite{banks2010discrete-event}:
+
+\begin{quote}
+    \emph{Una simulación es la imitación del comportamiento de un proceso o
+    sistema del mundo real en el tiempo.}\textcolor{red}{Simulation involves the
+    generation of an artificial history of the system, and the observation of
+    that artificial history to draw inferences concerning the operating
+    characteristics of the real system that is represented.}
+\end{quote}
+\change{Toca traducir lo que queda. Además asegúrate de que la cita sea
+correcta, Jerry Banks aparece dos veces en tus referencias}
+
+
+
+% \change[inline]{Ejemplo: Modelos de Montecarlo y modelos con ecuaciones
+% diferenciales} \change[inline]{Un tipo de modelo son los modelos dinámicos
+% discretos.}
+Actualmente hay muchos tipos distintos de sistemas de simulación, como por
+ejemplo los “Modelos de Montecarlo” y “Modelos en ecuaciones diferenciales”. No
+obstante, el principal objeto de estudio de este proyecto será una categoría muy
+importante a la que se conoce como “Modelos de simulación dinámicos discretos”,
+especificamente aquellos que se pueden modelar a través de un diseño orientado a
+eventos.
+
+% \change[inline]{En realidad se han implementado ya algunos lenguajes
+% específicos para simulación... (hablaremos de esto en los antecedentes)}
+% \change[inline]{Aplicaciones de la simulación de sistemas (sistemas de salud,
+% de transporte, control de inventarios, líneas de montaje o ensamblaje)} %
+% Igual esto se va a contexto
+Sin embargo, es necesario recalcar que existe ya una múltitud de aplicaciones
+orientadas totalmente a la simulación de sistemas: Arena, AutoMod, Extend, entre
+otros.\change{Tienes que hacer una cita aquí, esto no lo estás sacando de la nada.}
+El hecho de que exista software específico para esto nos da un indicativo de lo
+importante ue es esta área para el estudio de resultados y el modelado de
+procesos. De hecho, el tipo específico de modelos del cual hablaremos es
+muy utilizado en sistemas de salud, de transporte, control de inventarios,
+líneas de montaje o ensamblaje, entre otros. \change{No olvides citar esta lista
+de aplicaciones.}
+
+
+
+% Bloque de compilación \change[inline]{Habla aquí de los procesadores del
+% lenguaje (formal)} \change[inline]{¿Cuándo usar un procesador de lenguaje
+% formal?}
+Como mencionábamos antes, ya hay lenguajes de programación enfocados a la
+simulación de sistemas. \change{Has dicho software, pero en realidad sí que hay
+lenguajes dedicados a esto} Lo cual nos indica la unión de este campo con el de
+compilación y diseño de procesadores de lenguajes formales. Ahora mismo parece
+ser el momento más idóneo para usar un procesador de este tipo ya que debemos
+seguir una serie de tokens y una gramática fija en estos lenguajes.
+
+% \change[inline]{Herramientas de desarrollo de compiladores: Flex y Bison}
+
+
+
+% Bloque de unión de tecnologías
+% \change[inline]{Ambas tecnologías no parecen tener nada en común. Pero podemos
+% dar un ejemplo de cuándo se pueden usar ambas a continuación}
+% \change[inline]{Sí que se da la necesidad de una herramienta que trabaje con ambos}
+Se puede ver, por tanto, que la unión entre los campos de compilación y
+simulación de sistemas puede generar herramientas diseñadas específicamente para
+agilizar el proceso de creación e implementación de modelos sin preocuparse
+mucho por detalles irrelevantes para el programador de la simulación.
+
+% \change[inline]{En este capítulo hablaremos de los conceptos básicos, el
+% planteamiento y lo objetivos del proyecto.}
+Sabiendo todo esto, procederemos hablar en este capítulo sobre la propuesta de
+nuestro proyecto, sus objetivos y una serie de conceptos básicos necesarios para
+la simulación de sistemas y la compilación en general. \improvement{Un poco seco,
+cambia la redacción}
+
+
+
+% Secciones aquí
+\input{4-Introduccion/1-motivacion.tex}
+\input{4-Introduccion/2-alcance.tex}
+\input{4-Introduccion/3-antecedentes.tex}
+
+\cleardoublepage % End Chapter

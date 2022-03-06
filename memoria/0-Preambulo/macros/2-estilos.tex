@@ -1,0 +1,195 @@
+% ################################################################
+% #######     ESTILOS EN GENERAL                    ##############
+% ################################################################
+
+% *********************** Cabeceras ******************************
+
+% ************ Headers, Footnotes and others ************
+\setlength{\headheight}{15.13202pt} %not working?
+
+% % De las cabeceras y pies de página de cada página:
+\fancypagestyle{empty}{ %
+    \fancyhf{} % remove everything
+    \renewcommand{\headrulewidth}{0pt} % remove lines as well
+    \renewcommand{\footrulewidth}{0pt}
+}
+
+% Redefine plain page style
+\fancypagestyle{plain}{
+	\fancyhf{}
+	\renewcommand{\headrulewidth}{0pt}
+	\fancyfoot[LE,RO]{\thepage}
+}
+
+\fancypagestyle{fancy-intro}{%
+    \fancyhf{}
+    \fancyhead[RE]{\textit{\nouppercase{\leftmark}}}
+    \fancyhead[LO]{\textit{\nouppercase{\rightmark}}}
+    \fancyhead[LE,RO]{\thepage}
+    \renewcommand{\headrulewidth}{1pt}
+    \renewcommand{\footrulewidth}{1pt}
+}
+
+\fancypagestyle{fancy-body}{%
+    \fancyhf{}
+    \fancyhf[OLH]{\rightmark}
+    \fancyhf[ERH]{\leftmark}
+    \fancyhf[ORH,ELH]{\thepage}
+    \renewcommand{\headrulewidth}{1pt}
+    \renewcommand{\footrulewidth}{1pt}
+}
+
+\fancypagestyle{fancy-end}{%
+    \fancyhf{}
+    \fancyhead[LE,RO]{\thepage}
+    \fancyhead[LO]{\leftmark}
+    \fancyhead[RE]{\emph{Anexo \thechapter}}
+    \renewcommand{\headrulewidth}{0.5pt}
+    \renewcommand{\footrulewidth}{1pt}
+}
+
+% Code for creating empty pages
+% No headers on empty pages before new chapter
+% this next section (till \makeatother) makes sure that blank pages
+%% are actually completely blank, cause they're not usually
+\makeatletter % Necesario para hacer que @ tenga el significado adecuado
+\def\cleardoublepage{\clearpage\if@twoside \ifodd\c@page\else
+	\hbox{}
+	\vspace*{\fill}
+	\thispagestyle{empty}
+	\newpage
+	\if@twocolumn\hbox{}\newpage\fi\fi\fi}
+\makeatother  % Restauramos el valor de @ anterior a este if
+
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+\renewcommand{\sectionmark}[1]{\markright{#1}{}}
+
+% ************ Sectioning ************
+
+% Del estilo de los apartados seccionadores (capítulos, secciones, ...):
+% Todo esto gracias al paquete "titlesec"
+\renewcommand{\thepart}{\arabic{part}}
+\titleformat
+    {\part} % command (depth=-1)
+    [display]  % shape
+    {\bfseries \Large} % format
+    {\filcenter \Huge\thepart. \Huge\MakeUppercase{\partname}} % label
+    {4ex}
+    {%marra
+        \vspace{2ex}%
+        \filcenter \huge  \filright
+    } % before-code
+    [
+        \vspace{2ex}%
+    ] % after-code
+
+\titleformat
+    {\chapter} % command (depth=0)
+    [display] % shape
+    {\bfseries\Large}
+    {
+        \filleft\Huge\thechapter.\Large\MakeUppercase{\chaptertitlename}
+    } % label
+    {4ex} % sep
+    {
+        \titlerule
+    	\vspace{2ex}%
+    	\filright
+	} % before-code
+    [
+        \vspace{2ex}%
+        \titlerule
+    ] % after-code
+
+\titleformat
+    {\section} % command (depth=1)
+    [hang] % shape
+    {\normalfont\bfseries} % format
+    {\thesection.} % label
+    {0em} % sep
+    {
+    } % before-code
+    [
+    ] % after-code
+
+\titleformat
+    {\subsection} % command (depth=2)
+    [hang] % shape
+    {\normalfont\bfseries} % format
+    {\thesubsection.} % label
+    {0em} % sep
+    {
+    } % before-code
+    [
+    ] % after-code
+
+\titleformat
+    {\subsubsection} % command (depth=3)
+    [hang] % shape
+    {\normalfont\bfseries} % format
+    {\thesubsubsection.} % label
+    {0em} % sep
+    {
+    } % before-code
+    [
+    ] % after-code
+
+\titleformat
+    {\paragraph} % command (depth=4)
+    [hang] % shape
+    {\normalfont\bfseries} % format
+    {} % label
+    {0em} % sep
+    {
+    } % before-code
+    [
+    ] % after-code
+    
+\titleformat
+    {\subparagraph} % command (depth=5)
+    [runin] % shape
+    {\normalfont\bfseries} % format
+    {} % label
+    {0em} % sep
+    {
+    } % before-code
+    [
+    ] % after-code
+
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
+
+% \newcommand{\cabecerasformatosection}[1]{%
+	% {\makebox[0.98\linewidth][l]{#1}}
+% }
+% \newcommand{\cabecerasformatosubsection}[1]{%
+	% {\makebox[0.98\linewidth][l]{\textsl{#1}}}
+% }
+% \newcommand{\cabecerasformatosubsubsection}[1]{%
+	% {\framebox[1.1\width][l]{#1}}
+% }
+% \sectionfont{\cabecerasformatosection}
+% \subsectionfont{\cabecerasformatosubsection}
+% \subsubsectionfont{\cabecerasformatosubsubsection}
+% \sectionfont{\sffamily}
+% \subsectionfont{\sffamily\textsl}
+% \subsubsectionfont{\sffamily}
+
+% ************************* ToC and Index ********************************
+\setcounter{secnumdepth}{2} % Máx. numerated depth %% which sections are numbered
+\setcounter{tocdepth}{2} % Máx. depth that appears in ToC. Titles level degree at table of contents
+
+% *********************** Global paragraph indentation ******************************
+\frenchspacing
+\widowpenalty=1000
+
+\setlength{\parindent}{0cm} % anula indentacion de parrafos
+\setlength{\parskip}{1.5ex plus 0.5ex minus 0.5ex}   % establece separacion entre parrafos a 8 puntos
+
+\setlength\headheight{15pt}
+
+%\singlespacing
+\onehalfspacing
+%\doublespacing
+%\setstretch{1.1}
+

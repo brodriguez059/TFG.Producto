@@ -1,0 +1,75 @@
+\section{Motivación y planteamiento del proyecto}\label{sec:motivacion}
+
+% Bloque simulación de sistemas
+% \change[inline]{En simulación de sistemas, Un tipo de modelo son los modelos
+% dinámicos discretos.}
+% \change[inline]{Explicación de lo que son básicamente. (Igual una referencia a
+% la definición de "dinámicos" y a la de "discretos")}
+% \change[inline]{Estos tipos de modelos se suelen modelar usando diseños basados
+% en eventos a través de grafos de sucesos.}
+% \change[inline]{Estos modelos se suelen simular con un diseño basado en eventos
+% o sucesos. Que vendría a ser...}
+En el área de simulación de sistemas, una familia de modelos son los “modelos
+dinámicos discretos”, siendo estos “dinámicos” porque su comportamiento cambia
+en el tiempo y “discretos” porque estos cambios ocurren en instantes
+determinados en vez de ocurrir continuamente.\improvement{Siento que estás
+repitiéndote mucho, tienes que cambiar la calidad de este discurso}
+Dichos sistemas se suelen modelar usando un diseño “basado en eventos”, el cual
+nos indica que los cambios del modelo se deben considerar como “eventos” que
+pueden ocurrir y dar lugar a otros eventos. Para ello, es común generar un
+“grafo de sucesos” que represente todos los eventos posibles que pueden ocurrir
+en el sistema y las relaciones que tienen entre estos.
+
+% \change[inline]{A pesar de que cada modelo de este tipo tiene sus
+% especificidades, todos estos comparten elementos en común independientes del
+% sistema simulado (reloj, temporizador de eventos, lista de sucesos, etc.).}
+% \change[inline]{Para poder implementar cada modelo, por tanto, es necesario
+% añadir dichas implementaciones aparte de las propias del modelo. Sin embargo,
+% sabiendo que todas éstas son compartidas, no se le debería dar al programador la
+% responsabilidad de hacerlo si se pueden generar ya de antemano.}
+Podríamos decir que cada modelo tendrá sus peculiaridades y diferencias
+específicas a la hora de generar su implementación. Sin embargo, se da el hecho
+de que todos los modelos de esta familia comparten elementos en común
+independientemente del sistema a simular: el reloj de la simulación, el
+temporizador de eventos, la lista de sucesos, entre otros. Por tanto, podemos
+abstraer el desarrollo de estos programas de tal forma que el desarrollador sólo
+deba encargarse de implementar todo aquello que sea único del modelo, quitándole
+así la responsabilidad de generar los elementos en común y agilizando el
+desarrollo en el proceso.
+
+
+
+
+% Bloque de compilación
+% \change[inline]{Los compiladores son usados...}
+% \change[inline]{Los diseños basados en eventos en realidad cumplen con esta
+% peculiaridad}
+% \change[inline]{Podemos generar un analizador léxico, sintáctico y semántico
+% que nos permita escribir de manera más eficaz nuestro modelo para luego
+% convertirlo a algo ejecutable.}
+% \change[inline]{Nosotros lo transformaremos a código Python, por lo tanto
+% crearemos un transpilador.}
+Tomando en cuenta que la principal herramienta de diseño de estos modelos serán
+los grafos de sucesos, nos encontraremos con el hecho de que éstos siguen una
+estructura representable a través de una gramática independiente de contexto.
+Por tanto, es posible generar una serie de analizadores léxico, sintáctico y
+semánticos que nos permitan procesar un lenguaje formal a otro código fuente.
+Por esta razón hemos considerado una buena opción el uso de herramientas de
+generación de compiladores como lo son Flex y Bison. Vemos que es posible crear
+estos analizadores de forma que este hipotético nuevo lenguaje sea traducido a
+código Python.
+
+% \urgent{Generar una mejor explicación del problema encontrado. Hay que vender este TFG}
+
+% El desarrollo de simuladores de sistemas dinámicos discretos, a pesar de que
+% puede realizarse a mano, es capaz de llegar a resultar tedioso cuando se deben
+% construir múltiples modelos distintos. Sin embargo, casi siempre se tendrá que
+% estos sistemas harán uso de varias implementaciones que no dependen del
+% simulador como tal.
+
+% Como todas estos programas compartirán una serie de elementos en común (lista
+% de eventos, reloj de la simulación, temporizador del simulador, entre otros)
+% independientemente del modelo implementado, se plantea crear un nuevo lenguaje
+% de programación orientado al desarrollo rápido de sistemas de simulación
+% dinámicos discretos, creando para ello también un transpilador que traduzca
+% estas implementaciones a código Python.

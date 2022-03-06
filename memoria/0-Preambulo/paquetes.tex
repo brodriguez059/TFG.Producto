@@ -1,0 +1,221 @@
+% ################################################################
+% #######     CODIFICACIÓN DEL ARCHIVO              ##############
+% ################################################################
+
+% ************************* Input encoding ********************************
+% \usepackage{ucs}
+\usepackage[utf8]{inputenc} % Permite usar carácteres UTF8
+% https://www.overleaf.com/learn/latex/Spanish
+
+% ************************* Output encoding ********************************
+\usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
+% https://www.overleaf.com/learn/latex/Spanish
+% \usepackage{courier}
+
+% ************************* Font types ********************************
+% times erabili beharrean
+\usepackage{mathptmx}
+\usepackage[scaled=.90]{helvet}
+
+% ************************* Lenguaje a utilizar ********************************
+
+\usepackage[spanish, es-tabla]{babel} %To extend the default capabilities of LaTeX, providing proper hyphenation and translation of the names of document elements.
+% https://www.overleaf.com/learn/latex/Spanish
+% \usepackage{hyphenat} % Paquete para controlar la separación de palabras
+% \hyphenation{mate-máti-cas recu-perar}
+
+
+
+% ################################################################
+% #######              GEOMETRY                     ##############
+% ################################################################
+
+% ************************* Geometría ********************************
+% \usepackage[a4paper, inner=1.5cm, outer=3cm, top=4cm, bottom=3cm, bindingoffset=1cm]{geometry}
+% \usepackage[a4paper, left=37mm,right=30mm,top=35mm,bottom=30mm]{geometry}
+\usepackage[left=2.5cm, right=3.5cm, top=4.0cm, bottom=3.0cm]{geometry}
+% \usepackage[a4paper, inner=3.0cm, outer=3.0cm, top=4.0cm, bottom=3.0cm, marginpar=2.0cm, head=13.60pt]{geometry}
+
+% use option "showframe" in geometry to see frames
+% \usepackage[showframe]{geometry}
+
+% ************************* Layout visualization ********************************
+
+\usepackage{layout} % To see the layout of the page
+% \usepackage{showframe}
+
+
+% ################################################################
+% #######     ESTILOS EN GENERAL                    ##############
+% ################################################################
+
+% *********************** Cabeceras ******************************
+\usepackage{fancyhdr} % Permite cambiar el estilo de las cabeceras y pies de página de las páginas del documento
+% https://ctan.javinator9889.com/macros/latex/contrib/fancyhdr/fancyhdr.pdf
+
+% \usepackage{fncychap} % Este paquete permite cambiar el estilo de la cabecera de los capítulos
+\usepackage[sf,outermarks]{titlesec} % Este paquete permite cambiar el estilo de las cabeceras, pies de página y la forma de las secciones y divisores de sección.
+% \usepackage[compact]{titlesec}
+% \usepackage{sectsty}
+
+
+% ************************* ToC and Index ********************************
+\usepackage[nottoc]{tocbibind} % Para añadir las listas de figuras y cuadros a la TOC
+% \usepackage[acronym,footnote,nonumberlist,toc]{glossaries}
+% Erabilera
+% http://en.wikibooks.org/wiki/LaTeX/Glossary
+% latexmk erabiliz gero, ikusi http://tex.stackexchange.com/questions/1226/how-to-make-latexmk-use-makeglossaries
+
+% Glosario-en eskuliburu zabaldua
+% http://osl.ugr.es/CTAN/macros/latex/contrib/glossaries/glossaries-user.html#x1-140002.2
+\usepackage[page]{appendix} % Añade el enviroment appendices
+% \usepackage[toc,page]{appendix} % Añade una tabla de apéndices a la ToC
+% https://osl.ugr.es/CTAN/macros/latex/contrib/appendix/appendix.pdf
+% \addto{\captionsspanish}{
+%     \renewcommand*{\appendixpagename}{Ap\'{e}ndices}
+%     \renewcommand*{\appendixtocname}{Ap\'{e}ndices}
+% }
+\usepackage{makeidx} % Para crear el index si existe
+
+% *********************** Global paragraph indentation ******************************
+\usepackage{parskip} % El único propósito es quitar el indent de todos los párrafos
+\usepackage{setspace} % spacing environment
+%\usepackage[protrusion=true,expansion=true]{microtype}
+
+
+
+% ################################################################
+% #######     COLOURS                               ##############
+% ################################################################
+
+% *************************** Colours *****************************
+
+\usepackage{color}
+\usepackage[table, svgnames, pdftex,dvipsnames]{xcolor} %  Coloured text etc.
+% https://ctan.javinator9889.com/macros/latex/contrib/xcolor/xcolor.pdf
+\usepackage{colortbl}
+
+
+
+% ################################################################
+% #######     GRAPHICS                              ##############
+% ################################################################
+
+% *************************** Graphics and figures *****************************
+\usepackage{epsf, graphics, graphicx}
+
+\usepackage[figuresright]{rotating}
+%\usepackage{wrapfig}
+
+\usepackage{float} % Fuerza las figuras a una posición exacta
+
+\usepackage[font=small,labelfont=bf]{caption}
+\usepackage{subcaption} % Permite poner subsubtítulos dentro de figuras compuestas
+% http://mirrors.ibiblio.org/CTAN/macros/latex/contrib/caption/subcaption.pdf
+
+% \usepackage{tikz} % Advanced inline graphics.
+% % https://www.bu.edu/math/files/2013/08/tikzpgfmanual.pdf
+% % https://ctan.javinator9889.com/graphics/pgf/base/doc/pgfmanual.pdf
+% \usepackage{pgfplots}
+% \usetikzlibrary{shapes, decorations, calc, arrows}
+% \usetikzlibrary{3d,fit,backgrounds, decorations.text}
+% \usetikzlibrary{positioning, shapes.symbols}
+% \usetikzlibrary{decorations.pathreplacing, calligraphy}
+% \tikzset{>=latex}
+
+
+
+% ################################################################
+% #######     MATHEMATICS                           ##############
+% ################################################################
+
+% ************************* Mathematics ********************************
+\usepackage{amsmath}
+\usepackage{amssymb}
+% \usepackage{amsthm} % Use ntheorem better
+\usepackage{ntheorem} % Customizing and writing theorems
+\usepackage{bm} % Bold math symbols
+\usepackage{amscd}
+\usepackage{latexsym} % Even more operators. http://mirrors.ibiblio.org/CTAN/macros/latex/base/latexsym.pdf
+\usepackage{calc} % Para hacer cálculos de longitudes en los comandos
+
+% *********************************** SI Units *********************************
+\usepackage{siunitx} % use this package module for SI units
+
+
+% ************************* Text typesetting extras ********************************
+\usepackage{csquotes} % Para permitir citas en el texto (bonitas)
+\usepackage{circledsteps} % Permite crear texto y números encerrados en círculos
+% \usepackage[activate=true, final, tracking=true, kerning=true, spacing=true, factor=1100, stretch=10, shrink=10]{microtype}
+% \usepackage{microtype}
+
+\usepackage{lipsum}                     % Dummytext
+\usepackage{xargs}                      % Use more than one optional parameter in a new commands
+
+% ################################################################
+% #######     INSERTABLES                           ##############
+% ################################################################
+
+% ************************* Beatiful colorboxes (breakable) ********************************
+% \usepackage{mdframed}
+\usepackage[most]{tcolorbox} % https://osl.ugr.es/CTAN/macros/latex/contrib/tcolorbox/tcolorbox.pdf
+
+% ******************************* Itemize and enumerate *********************************
+
+\usepackage{paralist} % compactenum...
+\usepackage{enumitem} % Customizable enums
+% https://ctan.javinator9889.com/macros/latex/contrib/enumitem/enumitem.pdf
+
+% ******************************* Tables *********************************
+
+% https://ctan.javinator9889.com/macros/latex/contrib/booktabs/booktabs.pdf
+\usepackage{array} % For defining special column types
+\usepackage{longtable} % For breakable tables
+\usepackage{multirow} % Table cells that span multiple rows
+\usepackage{multicol} % Table cells that span multiple columns
+% https://osl.ugr.es/CTAN/macros/latex/required/tools/array.pdf
+\usepackage{tabulary}
+% https://osl.ugr.es/CTAN/macros/latex/contrib/tabulary/tabulary.pdf
+% \usepackage{xltabular}
+% https://www.ctan.org/pkg/xltabular
+%\usepackage{tabularx}
+% https://ctan.org/pkg/tabularx?lang=en
+\usepackage{booktabs} % For professional looking tables
+
+% *************************** Listings *****************************
+
+% http://tug.ctan.org/tex-archive/macros/latex/contrib/caption/caption-eng.pdf
+% \usepackage{listingsutf8} % - Para escribir código
+\usepackage{listings}
+% https://www.overleaf.com/learn/latex/Code_listing
+% https://osl.ugr.es/CTAN/macros/latex/contrib/listings/listings.pdf
+
+% \usepackage{minted} % Substitute for listings
+% https://github.com/gpoore/minted/blob/master/source/minted.pdf
+% \usepackage{textcomp} % XML kodea formateatzeko
+
+% ************************* Margin Notes ********************************
+\usepackage{marginnote}
+\usepackage{marginfix}
+% \usepackage{mparhack}
+
+% *********************************** TODO Comments *********************************
+% \setlength {\marginparwidth }{2cm}
+\usepackage[colorinlistoftodos,prependcaption,textsize=scriptsize,textwidth=2cm]{todonotes}
+
+
+% ################################################################
+% #######     REFERENCES AND BIBLIOGRAPHY           ##############
+% ################################################################
+
+% ************************* Bibliography ********************************
+\usepackage[backend=biber,style=apa,autocite=plain,sorting=ynt]{biblatex}
+
+% ************************* Referencias y enlaces ********************************
+\usepackage{url} % https://osl.ugr.es/CTAN/macros/latex/contrib/url/url.pdf
+
+\usepackage[hyperindex,bookmarks,colorlinks=true,citecolor=blue,urlcolor=blue,linkcolor=blue,pdftex,unicode]{hyperref} % Se recomienda que sea el último paquete en ser importado
+
+\usepackage{cleveref} % Clever references (éste debe ser en realidad el último paquete importado)
+
+% line in order to check if utf-8 is properly configured: áéíóúñ

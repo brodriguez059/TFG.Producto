@@ -1,0 +1,82 @@
+% ************************* Preámbulo ********************************
+
+% *************** Document Class ***************
+% Para más información sobre las clases:
+% https://en.wikibooks.org/wiki/LaTeX/Document_Structure#Document_classes
+% En la tabla "Document classes"
+% https://ctan.org/topic/class
+% \documentclass[10pt, a4paper]{book}
+\documentclass[12pt, twoside, a4paper, openright]{book} % \documentclass[options]{class}
+% Si usas twoside en vez de oneside, LaTeX te pondrá hojas blancas adicionales
+
+% Para más información sobre las opciones:
+% https://en.wikibooks.org/wiki/LaTeX/Document_Structure#Document_classes
+% En la tabla "Document Class Options"
+
+% Posibles opciones:
+% 10pt, 11pt, 12pt : El tamaño de la fuente por defecto
+% a4paper, letterpaper,... : El tamaño del papel del documento
+% twocolumn
+% landscape
+% titlepage, notitlepage
+% openright, openany
+% draft
+% fleqn
+% leqno
+
+%------------ Paquetes, macros y metadata ------------%
+\input{metadata} % Metadata
+\input{0-Preambulo/paquetes}
+\input{0-Preambulo/macros}
+
+\begin{document}
+% \layout
+
+%------------ Elementos iniciales ------------%
+{
+\frontmatter
+\thispagestyle{empty}
+\input{1-Portada/portada}
+\pagestyle{plain}
+% \input{2-Resumen/resumen}
+\pagestyle{plain}
+\input{3-Indices/toc}
+% \input{3-Indices/lof}
+% \input{3-Indices/lot}
+% \input{3-Indices/lol}
+}
+
+%------------ Cuerpo del documento ------------%
+{
+\mainmatter % El contenido del informe (introducción, cuerpo, conclusiones)
+\pagestyle{fancy-body}
+\setlength{\parskip}{1.3ex plus 0.2ex minus 0.2ex}
+\renewcommand{\baselinestretch}{1.3}
+\input{4-Introduccion/introduccion}
+\input{5-Cuerpo/cuerpo}
+% \input{6-Conclusion/conclusion}
+}
+
+%------------ Elementos finales ------------%
+{
+\backmatter % La zona de índices, bibliografía y referencias
+\pagestyle{plain}
+\input{7-Bibliografía/bibliography}
+\cleardoublepage
+}
+
+%------------ Anexos del informe ------------%
+{
+\noappendicestocpagenum
+\appendixpage
+\addappheadtotoc
+\appendix % La zona de apéndices
+% reinstate the correct level for list of tables and figures
+\appto\appendix{\addtocontents{toc}{\protect\setcounter{tocdepth}{0}}}
+\appto\listoffigures{\addtocontents{lof}{\protect\setcounter{tocdepth}{1}}}
+\appto\listoftables{\addtocontents{lot}{\protect\setcounter{tocdepth}{1}}}
+\pagestyle{fancy-end}
+\input{8-Apéndices/apendices}
+}
+
+\end{document}
