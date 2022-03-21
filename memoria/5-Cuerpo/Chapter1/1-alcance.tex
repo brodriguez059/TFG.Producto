@@ -5,7 +5,7 @@ implementar y documentar un framework de modelado y desarrollo de simulación de
 sistemas dinámicos discretos basados en eventos. Dicho framework se dividirá en
 tres módulos principales:
 \begin{itemize}
-    \item Lenguaje: Un lenguaje de modelado específico pensado para ser usado
+    \item \textbf{Lenguaje}: Un lenguaje de modelado específico pensado para ser usado
     por usuarios que no tengan mucha experiencia en programación. Se hará uso de
     las herramientas de desarrollo de compiladores Flex y Bison para generar un
     transpilador que traduzca ficheros de este lenguaje a código Python. A
@@ -28,7 +28,7 @@ tres módulos principales:
             en caso de ser necesario.\urgent{Cambiar redacción}
         \end{itemize}
     \end{itemize}
-    \item Núcleo: Una serie de módulos que implementarán un microframework de
+    \item \textbf{Núcleo}: Una serie de módulos que implementarán un microframework de
     simulación de este tipo de sistemas en específico para Python, pensado para
     ser usado por programadores y para acotar la traducción del nuevo lenguaje.
     A través de él se plantea:
@@ -49,10 +49,14 @@ tres módulos principales:
             ésta.
         \end{itemize}
     \end{itemize}
-    \item CLI: Una interfaz de comandos por terminal que se usará para
+    \item \textbf{CLI}: Una interfaz de comandos por terminal que se usará para
     gestionar, configurar y ejecutar los proyectos desarrollados con este
     framework.
 \end{itemize}
+
+
+% -----------------------------------------------------------------------------
+
 
 \subsection{Objetivos}
 
@@ -81,48 +85,74 @@ desarrollados con este producto.
     necesaria para hacer uso del framework.
 \end{enumerate}
 
+
+% -----------------------------------------------------------------------------
+
+
 \subsection{Requisitos}
 El requisito base principal del proyecto consiste en cumplir con un tiempo de
-dedicación total máximo de 300 horas. Sin embargo, se pueden listar otros
-requisitos específicos:
+dedicación total máximo de 300 horas.
+% Sin embargo, se pueden listar otros requisitos específicos:
 
-\subsubsection{Caracterización de la memoria}
-Debe ser bien citado y referenciado para evitar el plagio
-Se debe utilizar una metodología de citas.
-Apartado de calidad
+% \subsubsection{Caracterización de la memoria}
+% \begin{itemize}
+%     \item Debe ser bien citado y referenciado.
+%     \item Apartado de calidad.
+% \end{itemize}
 
-\subsubsection{Caracterización del framework}
-Un lenguaje verificado que no pete a la primera
-El resultado son métricas en un dataframe (o varios si harás lo de validación)
-Cumplir con la línea base de calidad definida en el apartado (...)
+% \subsubsection{Caracterización del framework}
+% \begin{itemize}
+%     \item Un lenguaje verificado que no pete a la primera
+%     \item El resultado son métricas en un dataframe (o varios si harás lo de
+%     validación)
+%     \item Cumplir con la línea base de calidad definida en el apartado (...)
+% \end{itemize}
 
-\subsubsection{Caracterización del manual}
-Utilizar referencias a recursos ajenas
+% \subsubsection{Caracterización del manual}
+% \begin{itemize}
+%     \item Utilizar referencias a recursos ajenas
+% \end{itemize}
 
-\subsubsection{Licencia del producto}
+% \subsubsection{Licencia del producto}
 
-\subsection{Entregables}
 
-\begin{itemize}
-    \item Memoria: \change{Relacionados con el objeto de proyecto en sí}
-    \item Framework:\change{Relacionados con el objeto de proyecto en sí}
-    \item Manual: \change{Relacionados con el objeto de proyecto en sí}
-    \item Planificación: \change{Relacionados con la Planificación y Gestión del
-    Proyecto}
-    \item Seguimiento y Control: \change{Relacionados con la Planificación y Gestión del
-    Proyecto}
-    \item Actas: \change{Relacionados con la Planificación y Gestión del
-    Proyecto}
-\end{itemize}
+% -----------------------------------------------------------------------------
 
-\subsection{Exclusiones}
 
-Mi proyecto devolverá los datos en un sólo formato, no devolveré más tipos de
-ficheros para darle gusto al usuario.
+% \subsection{Entregables}
 
-\subsection{Supuestos}
+% \begin{itemize}
+%     \item Memoria: \change{Relacionados con el objeto de proyecto en sí}
+%     \item Framework:\change{Relacionados con el objeto de proyecto en sí}
+%     \item Manual: \change{Relacionados con el objeto de proyecto en sí}
+%     \item Planificación: \change{Relacionados con la Planificación y Gestión del
+%     Proyecto}
+%     \item Seguimiento y Control: \change{Relacionados con la Planificación y Gestión del
+%     Proyecto}
+%     \item Actas: \change{Relacionados con la Planificación y Gestión del
+%     Proyecto}
+% \end{itemize}
 
-\urgent[inline]{}
+
+% -----------------------------------------------------------------------------
+
+
+% \subsection{Exclusiones}
+
+% Mi proyecto devolverá los datos en un sólo formato, no devolveré más tipos de
+% ficheros para darle gusto al usuario.
+
+
+% -----------------------------------------------------------------------------
+
+
+% \subsection{Supuestos}
+
+% \urgent[inline]{}
+
+
+% -----------------------------------------------------------------------------
+
 
 \subsection{EDT}
 
@@ -132,3 +162,56 @@ ficheros para darle gusto al usuario.
     \caption{Esquema de Descomposición de Trabajo del Proyecto}
     \label{fig:EDT}
 \end{figure}
+
+\subsubsection{Rama de Gestión}
+El paquete de trabajo \textbf{Gestión (Ge)} contendrá:
+\begin{itemize}
+    \item \textbf{Planificación (Ge.P):} Este paquete de trabajo agrupará todas
+    las tareas relacionadas a la realización de la planificación y preparación
+    inicial del proyecto.
+    \item \textbf{Seguimiento y Control (Ge.S):} Este paquete de trabaj agrupará
+    todas las tareas necesarias para asegurar que el seguimiento del proyecto
+    está realizando como se plantea en la planificación y, en caso de no ser
+    así, controlar las consecuencias de las desviaciones emergentes.
+\end{itemize}
+
+\subsubsection{Rama de Formación e Investigación}
+El paquete de trabajo \textbf{Formación e Investigación (FeI)} contendrá todas
+las tareas relacionadas con el aprendizaje de herramientas, búsqueda de
+referencias y recolección de información externa necesaria para el desarrollo
+del proyecto.
+
+\subsubsection{Rama de Producto (Pr)}
+El paquete de trabajo \textbf{Producto (Pr)} contendrá todas las tareas
+relacionadas al propio diseño, implementación y verificación de los entregables
+principales del proyecto. Podemos desglosarlo en tres paquetes más pequeños:
+\begin{itemize}
+    \item \textbf{Memoria (Pr.Me):} Este paquete de trabajo agrupará todas las
+    tareas necesarias para la realización de la memoria final del proyecto.
+    \item \textbf{Framework (Pr.Fr):} Este paquete de trabajo agrupará todas las
+    tareas relacionadas al desarrollo del framework planteado en el alcance del
+    proyecto. Podemos separarlo en sus tres partes principales:
+    \begin{itemize}
+        \item \textbf{Lenguaje (Pr.Fr.Le):} Este paquete contendrá todas las
+        tareas relacionadas al diseño y desarrollo del nuevo lenguaje de
+        modelado.
+        \item \textbf{Core (Pr.Fr.Co):} Este paquete contendrá todas las
+        tareas relacionadas al diseño y desarrollo del propio núcleo del
+        framework.
+        \item \textbf{CLI (Pr.Fr.Cli):} Este paquete contendrá todas las
+        tareas relacionadas al diseño y desarrollo de la interfaz de comandos
+        proporcionada para facilitar la gestión de proyectos realizados con el
+        a generar.
+    \end{itemize}
+    \item \textbf{Manual (Pr.Ma):} Este paquete de trabajo agrupará todas las
+    tareas necesarias para la realización del manual de usuario que se generará
+    para facilitar el uso del producto a desarrollar.
+\end{itemize}
+
+\subsubsection{Rama de Instalación y Paquetes}
+El paquete de trabajo \textbf{Instalación y Paquetes (IyP)} agrupará todas las
+tareas relacionadas a la preparación del entorno de desarrollo y la instalación
+de paquetes y dependencias para la realización del producto principal del
+proyecto.
+
+% \subsubsection{Rama de Defensa (De)}
