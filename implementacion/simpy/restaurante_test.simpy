@@ -2,7 +2,7 @@
 %option n_sims = 30
 
 %{
-    import numpy as np
+    import random
 %}
 
 %in capacidad = 25

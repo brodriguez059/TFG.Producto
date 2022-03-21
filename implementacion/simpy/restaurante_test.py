@@ -2,23 +2,23 @@ from framework.simulator import Simulator
 from framework.generators import exponential_dist, normal_dist
 import random # For random number generation
 
-# We specify the endogen variables and its values
+# We specify the endogen variables and their values
 in_vars = {
     'capacidad' : 25,
     'tp_dur_estancia_media' : 90,
     'tp_dur_estancia_dsvtip' : 20,
-    'tp_abierto' : 300,
+    'tp_abierto' : 500,
     'tp_entrellegada' : 15,
     'gasto_persona_media' : 25,
     'gasto_persona_dsvtip' : 3
 }
 
-# We specify the state variables and its values
+# We specify the state variables and their values
 state_vars = {
     'libres':0,
 }
 
-# We specify the statistical counters and its values
+# We specify the statistical counters and their values
 count_vars = {
     'gasto':0.0,
     'gasto_total':0.0
@@ -34,7 +34,7 @@ def generar_grupo():
 
 # We create the instance of our simulator and pass the relevant parameters.
 # We are going to execute 30 simulations
-sim = Simulator(in_vars, state_vars, count_vars, n_sims=30)
+sim = Simulator(in_vars, state_vars, count_vars, n_sims=50)
 
 # We add the stop condition
 @sim.stop()
@@ -76,9 +76,17 @@ def suceso_fin(in_vars, state_vars, count_vars, data=None):
 def gasto_total_calc(in_vars, state_vars, count_vars):
     return count_vars['gasto_total']
 
+@sim.metric('gasto_total_2')
+def gasto_total_por_dos(in_vars, state_vars, count_vars):
+    return count_vars['gasto_total']*2
+
+@sim.metric('Metrica_test')
+def metrica_test_func(in_vars, state_vars, count_vars):
+    return count_vars['gasto_total']*2 / 100
+
 # We launch the simulation and get its data
 df = sim()
 print(df)
 
 # We store the data
-df.to_csv('Data.csv')
+# df.to_csv('Data.csv')
