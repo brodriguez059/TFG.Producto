@@ -1,13 +1,46 @@
-\section{Tareas y estimación de dedicaciones}\label{sec:tareas}
+\section{Estimación de dedicaciones y tareas}\label{sec:estimacion}
 \change[inline]{No se puede predecir porque usamos Kanban. Sólo conocemos las fechas finales de
 entrega.}
 
+
+% -----------------------------------------------------------------------------
+
+
+\subsection{Estimación de dedicación}\label{subsec:estimacion-paquetes}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{ccc}
+    \textbf{Paquete} & \textbf{Nombre}                 & \textbf{Estimación (Horas)} \\
+    Ge.P             & Gestión - Planificación         & 23                          \\
+    Ge.S             & Gestión - Seguimiento           & 20                          \\
+    FeI              & Formación e Investigación       & 46                          \\
+    Pr.Me            & Proyecto - Memoria              & 46                          \\
+    Pr.Fr.Le         & Proyecto - Framework - Lenguaje & 44                          \\
+    Pr.Fr.Co         & Proyecto - Framework - Core     & 48                          \\
+    Pr.Fr.Cli        & Proyecto - Framework - CLI      & 21                          \\
+    Pr.Ma            & Proyecto - Manual               & 11                          \\
+    IyP              & Instalaciones y Paquetes        & 11                          \\
+    Contención       & Horas de contención             & 30                          \\ % Pintar de otro color
+    Total            & Total                           & 300                         \\
+    \end{tabular}
+    \caption{Estimación de tiempos de dedicación por paquetes de trabajo}
+    \label{tab:estimacion-paquetes}
+\end{table}
+\urgent{Explicar que contención no es un paquete de trabajo, pero que es una parte importante de la estimación}
+
+
+% -----------------------------------------------------------------------------
+
+
+% \subsection{Hitos de desarrollado}
 
 
 % -----------------------------------------------------------------------------
 
 
 \subsection{Descripción de tareas a realizar}\label{subsec:tareas-descripcion}
+Aquí irán todas las tareas realizadas al final del proyecto. Esto no es fijo, surgirán más tareas a lo largo del proyecto (lo cual es aceptable porque la metodología es ágil)
 
 \subsubsection{Gestión}
 \paragraph{Planificación}
@@ -153,33 +186,3 @@ entrega.}
 
 
 % \subsection{Periodo de desarrollo de tareas}
-
-
-% -----------------------------------------------------------------------------
-
-
-\subsection{Estimación de dedicación}\label{subsec:tareas-estimacion}
-
-\begin{table}[H]
-    \centering
-    \begin{tabular}{ccc}
-    \textbf{Paquete} & \textbf{Nombre}                 & \textbf{Estimación (Horas)} \\
-    Ge.P             & Gestión - Planificación         & 25                          \\
-    Ge.S             & Gestión - Seguimiento           & 20                          \\
-    FeI              & Formación e Investigación       & 50                          \\
-    Pr.Me            & Proyecto - Memoria              & 50                          \\
-    Pr.Fr.Le         & Proyecto - Framework - Lenguaje & 48                          \\
-    Pr.Fr.Co         & Proyecto - Framework - Core     & 52                          \\
-    Pr.Fr.Cli        & Proyecto - Framework - CLI      & 25                          \\
-    Pr.Ma            & Proyecto - Manual               & 15                          \\
-    IyP              & Instalaciones y Paquetes        & 15                          \\
-    \end{tabular}
-    \caption{Estimación de tiempos de dedicación por paquetes de trabajo}
-    \label{tab:estimacion-paquetes}
-\end{table}
-
-
-% -----------------------------------------------------------------------------
-
-
-% \subsection{Hitos de desarrollado}
