@@ -2,9 +2,9 @@ MAIN = main.tex
 
 .PHONY: all clean
 all:
-	@echo "Compilando una vez"
+	@echo "Compilando por primera vez"
 	latexmk -f -pdf $(MAIN)
-	@echo "Compiland por segunda vez"
+	@echo "Compilando por segunda vez"
 	latexmk -f -pdf $(MAIN)
 
 clean:
