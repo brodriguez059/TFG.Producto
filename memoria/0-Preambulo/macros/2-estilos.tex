@@ -5,6 +5,8 @@
 % *********************** Cabeceras ******************************
 
 % ************ Headers, Footnotes and others ************
+\fancyheadoffset{0pt} % Used to extend the headrule and footrule, don't know why it works
+
 % % De las cabeceras y pies de página de cada página:
 \fancypagestyle{empty}{ %
     \fancyhf{} % remove everything
@@ -42,7 +44,7 @@
     \fancyhead[LE,RO]{\thepage}
     \fancyhead[LO]{\leftmark}
     \fancyhead[RE]{\emph{Anexo \thechapter}}
-    \renewcommand{\headrulewidth}{0.5pt}
+    \renewcommand{\headrulewidth}{1pt}
     \renewcommand{\footrulewidth}{1pt}
 }
 
@@ -60,22 +62,22 @@
 \makeatother  % Restauramos el valor de @ anterior a este if
 
 \renewcommand{\chaptermark}[1]{\markboth{#1}{}}
-\renewcommand{\sectionmark}[1]{\markright{#1}{}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
+% \renewcommand{\sectionmark}[1]{\markright{#1}{}}
 
 % ************ Sectioning ************
 
 % Del estilo de los apartados seccionadores (capítulos, secciones, ...):
-% Todo esto gracias al paquete "titlesec"
 \renewcommand{\thepart}{\arabic{part}}
 \titleformat
     {\part} % command (depth=-1)
     [display]  % shape
     {\bfseries \Large} % format
-    {\filcenter \Huge\thepart. \Huge\MakeUppercase{\partname}} % label
+    {\filcenter \Huge\MakeUppercase{\partname} \Huge\thepart} % label
     {4ex}
     {%marra
         \vspace{2ex}%
-        \filcenter \huge  \filright
+        \filcenter \huge \filright
     } % before-code
     [
         \vspace{2ex}%
@@ -86,12 +88,12 @@
     [display] % shape
     {\bfseries\Large}
     {
-        \filleft\Huge\thechapter.\Large\MakeUppercase{\chaptertitlename}
+        \filleft \Large\MakeUppercase{\chaptertitlename} \Large\thechapter
     } % label
-    {4ex} % sep
+    {2ex} % sep
     {
         \titlerule
-    	\vspace{2ex}%
+    	\vspace{1ex}%
     	\filright
 	} % before-code
     [
@@ -142,7 +144,7 @@
     } % before-code
     [
     ] % after-code
-    
+
 \titleformat
     {\subparagraph} % command (depth=5)
     [runin] % shape
@@ -154,39 +156,43 @@
     [
     ] % after-code
 
-\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
-\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
+% Controlamos el espaciado entre secciones
+% \titlespacing*{\part}
+% {0pt}{0pt}{0pt}
 
-% \newcommand{\cabecerasformatosection}[1]{%
-	% {\makebox[0.98\linewidth][l]{#1}}
-% }
-% \newcommand{\cabecerasformatosubsection}[1]{%
-	% {\makebox[0.98\linewidth][l]{\textsl{#1}}}
-% }
-% \newcommand{\cabecerasformatosubsubsection}[1]{%
-	% {\framebox[1.1\width][l]{#1}}
-% }
-% \sectionfont{\cabecerasformatosection}
-% \subsectionfont{\cabecerasformatosubsection}
-% \subsubsectionfont{\cabecerasformatosubsubsection}
-% \sectionfont{\sffamily}
-% \subsectionfont{\sffamily\textsl}
-% \subsubsectionfont{\sffamily}
+% \titlespacing*{\chapter}
+% {0pt}{0pt}{0pt}
+
+\titlespacing*{\section}
+{0pt}{2ex}{0pt}
+% {0pt}{5.5ex plus 1ex minus .2ex}{4.3ex plus .2ex}
+\titlespacing*{\subsection}
+{0pt}{2ex}{0pt}
+% {0pt}{5.5ex plus 1ex minus .2ex}{4.3ex plus .2ex}
+\titlespacing*{\subsubsection}
+{0pt}{2ex}{0pt}
+
+\titlespacing*{\paragraph}
+{0pt}{0pt}{0pt}
+
+\titlespacing*{\subparagraph}
+{0pt}{0pt}{0pt}
 
 % ************************* ToC and Index ********************************
 \setcounter{secnumdepth}{2} % Máx. numerated depth %% which sections are numbered
 \setcounter{tocdepth}{2} % Máx. depth that appears in ToC. Titles level degree at table of contents
 
 % *********************** Global paragraph indentation ******************************
-\frenchspacing
-\widowpenalty=1000
+\frenchspacing % To treat all spaces equally
+\widowpenalty=1000 %
 
 \setlength{\parindent}{0cm} % anula indentacion de parrafos
-% \setlength{\parskip}{1.5ex plus 0.5ex minus 0.5ex}   % establece separacion entre parrafos a 8 puntos
+\setlength{\parskip}{1.5ex plus 0.5ex minus 0.5ex}   % establece separacion entre parrafos a 8 puntos
 
-
-%\singlespacing
-\onehalfspacing
+% Control de interlineado
+% \setlength{\lineskip}{1pt}
+% \singlespacing
+% \onehalfspacing
 %\doublespacing
-%\setstretch{1.1}
-\setlength{\headheight}{15.13202pt} %not working?
+\setstretch{1.1}
+% \linespread{1.0}
