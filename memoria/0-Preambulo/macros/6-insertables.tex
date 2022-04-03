@@ -6,7 +6,34 @@
 
 % ******************************* Tables and lists *********************************
 
-\newcolumntype{P}[1]{>{\RaggedRight\hangafter=1\hangindent=1em}p{#1}} % automatic hanging indentations
+\newcolumntype{P}[1]{
+    >{\RaggedRight\hangafter=1\hangindent=1em}m{#1}
+} % automatic hanging indentations
+
+\newcolumntype{J}{
+    >{\justifying\arraybackslash}X
+}
+\newcolumntype{M}[1]{
+    >{\Centering\arraybackslash}m{#1}%{\dimexpr.2\linewidth-2\tabcolsep}
+} %Columa especial
+% \newcolumntype{N}{>{\justifying\arraybackslash}m{\dimexpr.2\linewidth-2\tabcolsep}} %Columa especial
+% \newcolumntype{L}{>{\RaggedRight\arraybackslash}X}
+
+% \newcolumntype{L}[1]
+% {%
+%     >{\RaggedRight\let\newline\\\arraybackslash\hspace{0pt}}m{#1}
+% }
+% \newcolumntype{C}[1]
+% {%
+%     >{\Centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}
+% }
+% \newcolumntype{R}[1]
+% {%
+%     >{\RaggedLeft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}
+% }
+
+\setlength{\tabcolsep}{3ex}
+\renewcommand{\arraystretch}{1.25}
 
 % *************************** Listings *****************************
 

@@ -1,0 +1,132 @@
+% Bloque simulación de sistemas
+
+\section{Simulación}\label{sec:simulacion}
+
+% \change[inline]{Introducción a la simulación de sistemas.}
+A lo largo del documento hemos estado mencionando la simulación de sistemas,
+pero no hemos definido exactamente qué es.
+
+\change[inline]{La simulación es una potente técnica de resolución de problemas}
+\change[inline]{Orígenes: La teoría de muestreo estadístico y el análisis
+probabilístico de complejos sistemas físicos}
+\change[inline]{Punto en común: uso de número aleatorios y muestreo aleatorio
+para aproximar un resultado de una solución}
+\change[inline]{Primera aplicación: Por Von Neuman y Ulam, durante la segunda
+guerra mundial, estudio de problemas de difusión aleatoria d\change[inline]{}e neutrons, en
+conexión con el desarrollo de la bomba atómica}
+\change[inline]{El proyecto era alto secreto, se le dio un nombre clave: Monte
+Carlo, en referencia al famoso casino de juego}
+\change[inline]{El nombre persistió durante un tiempo como sinónimo de cualquier
+simulación pero hoy en día está restringido a una rama de la matemática
+experimental que trata con números aleatorios (y que puede relacionarse con lo
+que llamaremos modelos de simulación estáticos)}
+\change[inline]{Mientras que el término simulación, o simulación de sistemas, se
+refiere a una técnica de análisis más extensa, aunque muy a menudo utiliza
+números aleatorios}
+
+\change[inline]{La contribución individual más importante es la potencia de cálculo y velocidad de procesamiento de los ordenadores}
+
+
+% \urgent[inline]{Definición de simulación}
+
+\change[inline]{Definición informal:}
+
+\begin{quote}
+    Una simulación es la imitación del modo de funcionamiento u operación de un
+    proceso o sistema del mundo real. La simulación involucra la generación de
+    una historia artifical de un sistema, y la observación de esa historia
+    artificial para obtener inferencias relativas a las características de
+    funcionamiento de dicho sistema.
+\end{quote}\change{Cambios en esta redacción}
+
+
+\change[inline]{Definición formal:}
+
+\change[inline]{Nosotros hablaremos de una definición más exacta de “Simulación de Sistemas” y
+“Modelado” más adelante, pero por ahora podemos citar la definición encontrada
+en } % Usemos los apuntes aquí
+
+\begin{quote}
+    El proceso de diseñar un modelo lógico o matemático de un sistema real y
+    realizar experimentos basados en el ordenador con el modelo, al objeto de
+    descrbir, explicar o predecir el comportamiento del sistema real.
+\end{quote}\change{Cambios en esta redacción}
+
+\change[inline]{
+Actualmente hay muchos tipos distintos de sistemas de simulación, como por
+ejemplo los “Modelos de Montecarlo” y “Modelos en ecuaciones diferenciales”. No
+obstante, el principal objeto de estudio de este proyecto será una categoría muy
+importante a la que se conoce como “Modelos de simulación dinámicos discretos”,
+especificamente aquellos que se pueden modelar a través de un diseño orientado a
+eventos.
+}
+
+Se hace uso de otras técnicas:
+\change[inline]{La modelización permite obtener una representación abstracta del sistema real}
+\change[inline]{Las técnicas de programación de ordenadores: El programa de ordenador traduce el modelo a una forma operativa}
+\change[inline]{La teoría de la probabilidad define las variables aleatorias del modelo, y ayuda a construir las historias artificaciones (generadores de datos) necesarios}
+\change[inline]{La estadística ayuda en el diseño y análisis de experimentos a realizar para obtener respuestas}
+\change[inline]{Los métodos heurísticos se emplean para conseguir buenas soluciones, sino óptimas}
+
+% \change[inline]{¿Por qué y para qué la simulación de sistemas?}
+\change[inline]{
+El modelado matemático o modelado analítico se aprovecha de las características
+del problema cuya respuesta se desea obtener para llegar a la mejor conclusión.
+Sin embargo, muchas veces nos encontraremos con problemas que no se pueden
+modelar analíticamente debido a su complejidad en tiempo o espacio. En estas
+situaciones, debemos hacer uso de técnicas de aproximación de resultados para
+dar con soluciones que, aunque no se pueden garantizar óptimas, sí que se pueden
+considerar lo suficientemente buenas. Una de estas técnicas vendría a ser la
+simulación de sistemas, la cual a través de modelado simbólico/lógico intenta
+reproducir el comportamiento de un determinado sistema con el fin de analizar
+una serie de resultados a escoger.
+}
+
+\change[inline]{La simulación tiene sentido en la medida en que un ordenador permite plantear, describir y condificar modelo de grandes y complejos sistemas, que no se pueden resolver por el cálculo matemático estadístico de forma útil}
+\change[inline]{Se abre la posibilidad de, al igual que por ejemplo, los físicos y biólogos, realizar experimentos "de laboratorio" en áreas donde tradicionalmente esto no se podía hacer}
+\change[inline]{Esto representa una gran ventaja en cuanto a las posibilidades de controlar las condiciones de tales experimentos y en consecuencia incrementar la información obtenida de los mismos}
+
+
+\subsection{Definiciones}
+
+\subsubsection{Modelo}
+
+% \change[inline]{Haz una cita a la definición de tu profesor de simulación de
+% sistemas (igual no se puede)}
+% %https://normas-apa.org/referencias/citar-curso-o-material-de-clase/
+
+\change[inline]{Un modelo es una representación o una abstracción de un sistema
+con el propósito de estudiar tal sistema, pero que contiene sólo lo esencial del
+sistema real}
+\change[inline]{Aquellos aspectos del sistema que no contribuyen de forma
+significativa al comportamiento del sistema no están incluidos en el modelo. Por
+tanto un modelo es: un substituto del sistema real, una simplificación del mismo}
+\change[inline]{Un modelo probabilístico }
+
+% \change[inline]{Definición de modelo (Nos centraremos en modelos
+% probabilísticos)}
+
+% \change[inline]{¿Clasificación de modelos? (los modelos de simulación deben
+% ser simbólicos (no tienen una relación física o analógica con el sistema real,
+% sino una relación lógica))}
+
+% \change[inline]{¿Qué significa ser dinámico?}
+% \change[inline]{¿Qué significa ser discreto?}
+
+\subsubsection{Sistema}
+% \change[inline]{Definición de sistema}
+% \change[inline]{Partes y conceptos de un sistema de simulación (entorno del
+% sistema, entidad, atributo, actividad, estado, suceso, término endógeno,
+% término exógeno, contadores estadísticos, medidas de rendimiento)}
+
+\subsection{Ventajas e inconvenientes}
+% \change[inline]{Ventajas e inconvenientes}
+
+
+\subsection{Diseño basado en eventos}
+% \change[inline]{Grafo de sucesos}
+
+\subsection{Sistemas dinámicos discretos}
+% \change[inline]{Partes fundamentales (en común) de los simuladores dinámicos
+% discretos (lista de sucesos, temporizador de eventos, reloj...)}
+

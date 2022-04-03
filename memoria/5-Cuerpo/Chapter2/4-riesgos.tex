@@ -8,14 +8,16 @@
 
 \begin{table}[H]
     \centering
+    \resizebox{\textwidth}{!}{%
     \begin{tabular}{cc|cc|cc}
-    \textbf{Probabilidad} & \textbf{Valor} & \textbf{Impacto} & \textbf{Valor} & \textbf{Tipo de Riesgo} & \textbf{Probabilidad x Impacto} \\
-    Nada probable         & 0.10           & Muy bajo         & 0.05           & Muy bajo                & De 0 a 0.04                     \\
-    Poco probable         & 0.30           & Bajo             & 0.10           & Bajo                    & De 0.05 a 0.09                  \\
-    Probable              & 0.50           & Moderado         & 0.20           & Moderado                & De 0.10 a 0.29                  \\
-    Muy probable          & 0.70           & Alto             & 0.40           & Alto                    & De 0.30 a 0.49                  \\
-    Casi probable         & 0.90           & Muy alto         & 0.80           & Muy alto                & Mayor a 0.50                    \\
+    \textbf{Probabilidad} & \textbf{Valor} & \textbf{Impacto} & \textbf{Valor} & \textbf{Nivel de Riesgo} & \textbf{Probabilidad x Impacto} \\
+    Nada probable         & 0.10           & Muy bajo         & 0.05           & Muy bajo                 & De 0 a 0.04                     \\
+    Poco probable         & 0.30           & Bajo             & 0.10           & Bajo                     & De 0.05 a 0.09                  \\
+    Probable              & 0.50           & Medio            & 0.20           & Medio                    & De 0.10 a 0.29                  \\
+    Muy probable          & 0.70           & Alto             & 0.40           & Alto                     & De 0.30 a 0.49                  \\
+    Casi probable         & 0.90           & Muy alto         & 0.80           & Muy alto                 & Mayor a 0.50                    \\
     \end{tabular}
+    }
     \caption{Métricas para el análisis de riesgos}
     \label{tab:riesgos-metricas}
 \end{table}
@@ -32,23 +34,66 @@
 %     \item Encontrado un proyecto idéntico (riesgo positivo (o se aceptan o se explotan))
 % \end{enumerate}
 
-\begin{table}[H]
-    \centering
-    \resizebox{\textwidth}{!}{%
-    \begin{tabular}{l|l|l|l|l|l|l}
-    \textbf{Nº} & \textbf{Tipo} & \textbf{Descripción}                                                                                                                               & \textbf{Probabilidad} & \textbf{Impacto} & \textbf{Nivel de Riesgo} & \textbf{Respuesta}                                                                                                                         \\
-    1           & I             & Mala gestión del tiempo (falta de tiempo + pérdida de tiempo)                                                                                      & Probable              & Alto             & Moderado                 & Replanificar + hacer uso de la agilidad de la metodología                                                                                  \\
-    2           & E             & Problemas de contacto con {[}directora{]} (por problemas de conexión, enfermedad, etc. Tanto en el caso del autor como en el caso de la directora) & Poco probable         & Bajo             & Muy bajo                 & Replanificar reuniones?                                                                                                                    \\
-    3           & I             & No entender la metodología de gestión y desarrollo (Kanban)                                                                                        & Probable              & Alto             & Moderado                 & Profundizar en la formación de la metodología y generar cambios en el seguimiento y control                                                \\
-    4           & E             & Pérdida de información (se solventa con gestión de versiones + github)                                                                             & Nada probable         & Muy alto         & Bajo                     & Hacer uso de control de versiones para guardar todos los datos. En este caso GitHub.                                                       \\
-    5           & I             & Problemas con la integración de herramientas de desarrollo                                                                                         & Muy probable          & Muy alto         & Muy alto                 & Buscar alternativas en caso de no poder integrar las herramientas o profundizar en la formación de esta integración para evitar que ocurra \\
-    6           & I             & Análisis incorrecto de los usuarios finales del producto (Piensa en el lenguaje, por ejemplo).                                                     & Probable              & Alto             & Moderado                 & Reanalizar los perfiles de usuarios objetivos y replantear los productos                                                                   \\
-    7           & I             & Encontrado un proyecto idéntico (riesgo positivo (o se aceptan o se explotan))                                                                     & Poco probable         & Moderado         & Bajo                     & Buscar una forma de hacer uso de éste, ya sea para integrarlo en el proyecto o para usarlo como formación.                                 \\
-    \end{tabular}%
+{
+\setlength{\tabcolsep}{2ex} % Table column separation
+\renewcommand{\tabularxcolumn}[1]{>{\arraybackslash}m{#1}} % Default column type
+\renewcommand\arraystretch{1.2} %
+\rowcolors{2}{gray!25}{white} % Alternating row colors
+\begin{xltabular}{\textwidth}
+    {
+    % @{}
+    M{0.02\linewidth}
+    >{\justifying\arraybackslash}m{0.22\linewidth}
+    M{0.17\linewidth}
+    M{0.10\linewidth}
+    >{\justifying\arraybackslash}m{0.22\linewidth}
+    % @{}
     }
-    \caption{Riesgos del proyecto}
-    \label{tab:riesgos-descripcion}
-    \end{table}
+    \toprule        % table caption, ref label
+        \rowcolor{white!0}
+        \textbf{Nº} &
+        % \textbf{Tipo} &
+        \textbf{Descripción} &
+        \textbf{Probabilidad} &
+        \textbf{Impacto} &
+        % \textbf{Nivel de Riesgo} &
+        \textbf{Respuesta} \\ % head first part of table
+    \midrule        % line head body
+    \endfirsthead   % Definition of 1. table header
+
+    \rowcolor{white!0}
+    \multicolumn{5}{c}{Continuación de la página anterior}\\
+    \toprule
+        \rowcolor{white!0}
+        \textbf{Nº} &
+        % \textbf{Tipo} &
+        \textbf{Descripción} &
+        \textbf{Probabilidad} &
+        \textbf{Impacto} &
+        % \textbf{Nivel de Riesgo} &
+        \textbf{Respuesta} \\ % head following parts of table
+    \midrule        % line head body
+    \endhead        % Delongtab1finition of all following headers
+
+    \midrule
+    \rowcolor{white!0}
+    \multicolumn{5}{c}{Continua en la siguiente página}\\ % footer 1. (and more) part(s) of table
+    \endfoot        % foots of the table without the last one
+
+    \bottomrule
+    \rowcolor{white!0}
+    \caption{Riesgos del proyecto \label{tab:riesgos-descripcion}}\\
+    \endlastfoot    % the last(!!) foot of the table
+    % Data:
+    1   & Mala gestión del tiempo (falta de tiempo + pérdida de tiempo)                                                                                      & Probable              & Alto             & Replanificar + hacer uso de la agilidad de la metodología                                                                                  \\
+    2   & No entender la metodología de gestión y desarrollo (Kanban)                                                                                        & Probable              & Alto             & Profundizar en la formación de la metodología y generar cambios en el seguimiento y control                                                \\
+    3   & Pérdida de información (se solventa con gestión de versiones + github)                                                                             & Nada probable         & Muy alto         & Hacer uso de control de versiones para guardar todos los datos. En este caso GitHub.                                                       \\
+    4   & Problemas de contacto con {[}directora{]} (por problemas de conexión, enfermedad, etc. Tanto en el caso del autor como en el caso de la directora) & Poco probable         & Bajo             & Replanificar reuniones?                                                                                                                    \\
+    5   & Problemas con la integración de herramientas de desarrollo                                                                                         & Muy probable          & Muy alto         & Buscar alternativas en caso de no poder integrar las herramientas o profundizar en la formación de esta integración para evitar que ocurra \\
+    6   & Análisis incorrecto de los usuarios finales del producto (Piensa en el lenguaje, por ejemplo).                                                     & Probable              & Alto             & Reanalizar los perfiles de usuarios objetivos y replantear los productos                                                                   \\
+    7   & Encontrado un proyecto idéntico (riesgo positivo (o se aceptan o se explotan))                                                                     & Poco probable         & Medio            & Buscar una forma de hacer uso de éste, ya sea para integrarlo en el proyecto o para usarlo como formación.                                 \\
+\end{xltabular}
+}
 
 \urgent[inline]{
     Tenemos que diferenciar entre riesgos externos e internos
@@ -64,4 +109,4 @@
 
 \subsection{Análisis de viabilidad}
 
-Considero que el proyecto es viable
+\change[inline]{Viendo los antecedentes, considero que el proyecto es viable}
