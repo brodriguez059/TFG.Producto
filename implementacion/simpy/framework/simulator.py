@@ -265,7 +265,7 @@ class Simulator:
         self._metrics.update({metric_name: metric_func})
 
     # Main loop
-    def __call__(self):  # Executer
+    def __call__(self, n_sims=None):  # Executer
         """The main loop of the simulation. Executes its events until there are
         no more events to call or the stop condition evaluates to true.
 
@@ -273,7 +273,9 @@ class Simulator:
             The final information of the evaluation metrics of the simulation.
         """
         # For each simulation to be carried out...
-        for self._sim_index in range(self._n_sims):
+        if not n_sims:
+            n_sims = self._n_sims
+        for self._sim_index in range(n_sims):
             # Initialize the simulation
             self.initialize()
             # While there are events to be called or the stop condition evaluates to false...

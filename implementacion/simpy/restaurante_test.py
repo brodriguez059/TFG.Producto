@@ -34,7 +34,7 @@ def generar_grupo():
 
 # We create the instance of our simulator and pass the relevant parameters.
 # We are going to execute 30 simulations
-sim = Simulator(in_vars, state_vars, count_vars, n_sims=50)
+sim = Simulator(in_vars, state_vars, count_vars)
 
 # We add the stop condition
 @sim.stop()
@@ -76,16 +76,8 @@ def suceso_fin(in_vars, state_vars, count_vars, data=None):
 def gasto_total_calc(in_vars, state_vars, count_vars):
     return count_vars['gasto_total']
 
-@sim.metric('gasto_total_2')
-def gasto_total_por_dos(in_vars, state_vars, count_vars):
-    return count_vars['gasto_total']*2
-
-@sim.metric('Metrica_test')
-def metrica_test_func(in_vars, state_vars, count_vars):
-    return count_vars['gasto_total']*2 / 100
-
 # We launch the simulation and get its data
-df = sim()
+df = sim(n_sims=10)
 print(df)
 
 # We store the data
