@@ -6,21 +6,57 @@
 
 % PMBOK - Project Management Body of Knowledge 6º edición
 
-\begin{table}[H]
-    \centering
-    \resizebox{\textwidth}{!}{%
-    \begin{tabular}{cc|cc|cc}
-    \textbf{Probabilidad} & \textbf{Valor} & \textbf{Impacto} & \textbf{Valor} & \textbf{Nivel de Riesgo} & \textbf{Probabilidad x Impacto} \\
-    Nada probable         & 0.10           & Muy bajo         & 0.05           & Muy bajo                 & De 0 a 0.04                     \\
-    Poco probable         & 0.30           & Bajo             & 0.10           & Bajo                     & De 0.05 a 0.09                  \\
-    Probable              & 0.50           & Medio            & 0.20           & Medio                    & De 0.10 a 0.29                  \\
-    Muy probable          & 0.70           & Alto             & 0.40           & Alto                     & De 0.30 a 0.49                  \\
-    Casi probable         & 0.90           & Muy alto         & 0.80           & Muy alto                 & Mayor a 0.50                    \\
-    \end{tabular}
+{
+\setlength{\tabcolsep}{2ex} % Table column separation
+\renewcommand{\tabularxcolumn}[1]{>{\arraybackslash}m{#1}} % Default column type
+\renewcommand\arraystretch{1.2} %
+\rowcolors{2}{gray!25}{white} % Alternating row colors
+\begin{xltabular}{\linewidth}
+    {
+    % @{}
+        M{0.13\linewidth}
+        M{0.1\linewidth}|
+        |M{0.1\linewidth}
+        M{0.1\linewidth}
+    % @{}
     }
-    \caption{Métricas para el análisis de riesgos}
-    \label{tab:riesgos-metricas}
-\end{table}
+    \toprule        % table caption, ref label
+        \rowcolor{white}
+        \textbf{Probabilidad} &
+        \textbf{Valor} &
+        \textbf{Impacto} &
+        \textbf{Valor} \\
+    \midrule        % line head body
+    \endfirsthead   % Definition of 1. table header
+
+    \rowcolor{white!0}
+    \multicolumn{4}{c}{Continuación de la página anterior}\\
+    \toprule
+        \rowcolor{white}
+        \textbf{Probabilidad} &
+        \textbf{Valor} &
+        \textbf{Impacto} &
+        \textbf{Valor} \\
+    \midrule        % line head body
+    \endhead        % Delongtab1finition of all following headers
+
+    \midrule
+    \rowcolor{white!0}
+    \multicolumn{4}{c}{Continua en la siguiente página}\\ % footer 1. (and more) part(s) of table
+    \endfoot        % foots of the table without the last one
+
+    \bottomrule
+    \rowcolor{white!0}
+    \caption{Métricas para el análisis de riesgos \label{tab:riesgos-metricas}}
+    \endlastfoot    % the last(!!) foot of the table
+    % Data:
+    Nada probable         & 0.10           & Muy bajo         & 0.05 \\
+    Poco probable         & 0.30           & Bajo             & 0.10 \\
+    Probable              & 0.50           & Medio            & 0.20 \\
+    Muy probable          & 0.70           & Alto             & 0.40 \\
+    Casi probable         & 0.90           & Muy alto         & 0.80 \\
+\end{xltabular}
+}
 
 \subsubsection{Tabla de riesgos}
 % \begin{enumerate}
@@ -85,12 +121,12 @@
     \caption{Riesgos del proyecto \label{tab:riesgos-descripcion}}\\
     \endlastfoot    % the last(!!) foot of the table
     % Data:
-    1   & Mala gestión del tiempo (falta de tiempo + pérdida de tiempo)                                                                                      & Probable              & Alto             & Replanificar + hacer uso de la agilidad de la metodología                                                                                  \\
+    1   & Mala gestión del tiempo                                                                                       & Probable              & Alto             & Replanificar + hacer uso de la agilidad de la metodología                                                                                  \\
     2   & No entender la metodología de gestión y desarrollo (Kanban)                                                                                        & Probable              & Alto             & Profundizar en la formación de la metodología y generar cambios en el seguimiento y control                                                \\
     3   & Pérdida de información (se solventa con gestión de versiones + github)                                                                             & Nada probable         & Muy alto         & Hacer uso de control de versiones para guardar todos los datos. En este caso GitHub.                                                       \\
-    4   & Problemas de contacto con {[}directora{]} (por problemas de conexión, enfermedad, etc. Tanto en el caso del autor como en el caso de la directora) & Poco probable         & Bajo             & Replanificar reuniones?                                                                                                                    \\
+    4   & Problemas de comunicación (por problemas de conexión, enfermedad, etc.)                                       & Poco probable         & Bajo             & Replanificar reuniones?                                                                                                                    \\
     5   & Problemas con la integración de herramientas de desarrollo                                                                                         & Muy probable          & Muy alto         & Buscar alternativas en caso de no poder integrar las herramientas o profundizar en la formación de esta integración para evitar que ocurra \\
-    6   & Análisis incorrecto de los usuarios finales del producto (Piensa en el lenguaje, por ejemplo).                                                     & Probable              & Alto             & Reanalizar los perfiles de usuarios objetivos y replantear los productos                                                                   \\
+    6   & Análisis incorrecto de los usuarios finales del producto (Pensar en el lenguaje, por ejemplo).                                                     & Probable              & Alto             & Reanalizar los perfiles de usuarios objetivos y replantear los productos                                                                   \\
     7   & Encontrado un proyecto idéntico (riesgo positivo (o se aceptan o se explotan))                                                                     & Poco probable         & Medio            & Buscar una forma de hacer uso de éste, ya sea para integrarlo en el proyecto o para usarlo como formación.                                 \\
 \end{xltabular}
 }

@@ -6,12 +6,47 @@ entrega.}
 % -----------------------------------------------------------------------------
 
 
-\subsection{Estimación de dedicación}\label{subsec:estimacion-paquetes}
+{
+\setlength{\tabcolsep}{2ex} % Table column separation
+\renewcommand{\tabularxcolumn}[1]{>{\arraybackslash}m{#1}} % Default column type
+\renewcommand\arraystretch{1.2} %
+\rowcolors{2}{gray!25}{white} % Alternating row colors
+\begin{xltabular}{\textwidth}
+    {
+    % @{}
+        c
+        c
+        c
+    % @{}
+    }
+    \toprule        % table caption, ref label
+        \rowcolor{white!0}
+        \textbf{Paquete} &
+        \textbf{Descripción} &
+        \textbf{Estimación (Horas)} \\
+    \midrule        % line head body
+    \endfirsthead   % Definition of 1. table header
 
-\begin{table}[H]
-    \centering
-    \begin{tabular}{ccc}
-    \textbf{Paquete} & \textbf{Nombre}                 & \textbf{Estimación (Horas)} \\
+    \rowcolor{white!0}
+    \multicolumn{3}{c}{Continuación de la página anterior}\\
+    \toprule
+        \rowcolor{white}
+        \textbf{Paquete} &
+        \textbf{Descripción} &
+        \textbf{Estimación (Horas)} \\
+    \midrule        % line head body
+    \endhead        % Delongtab1finition of all following headers
+
+    \midrule
+    \rowcolor{white!0}
+    \multicolumn{3}{c}{Continua en la siguiente página}\\ % footer 1. (and more) part(s) of table
+    \endfoot        % foots of the table without the last one
+
+    \bottomrule
+    \rowcolor{white!0}
+    \caption{Estimación de tiempos de dedicación por paquetes de trabajo \label{tab:estimacion-paquetes}} \\
+    \endlastfoot    % the last(!!) foot of the table
+    % Data:
     Ge.P             & Gestión - Planificación         & 23                          \\
     Ge.S             & Gestión - Seguimiento           & 20                          \\
     FeI              & Formación e Investigación       & 46                          \\
@@ -22,12 +57,12 @@ entrega.}
     Pr.Ma            & Proyecto - Manual               & 11                          \\
     IyP              & Instalaciones y Paquetes        & 11                          \\
     Contención       & Horas de contención             & 30                          \\ % Pintar de otro color
-    Total            & Total                           & 300                         \\
-    \end{tabular}
-    \caption{Estimación de tiempos de dedicación por paquetes de trabajo}
-    \label{tab:estimacion-paquetes}
-\end{table}
+    \multicolumn{2}{c}{\textbf{Total}}                           & 300                         \\
+\end{xltabular}
+}
 \urgent{Explicar que contención no es un paquete de trabajo, pero que es una parte importante de la estimación}
+
+
 
 
 % -----------------------------------------------------------------------------
