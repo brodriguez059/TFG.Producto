@@ -302,3 +302,7 @@ TSWLatexianTemp*
 
 # Files with notes
 *.notes
+
+# Mardown
+_markdown_main
+*.markdown*

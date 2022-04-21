@@ -1,31 +1,120 @@
 \section{Metodología}\label{sec:metodologia}
-\urgent[inline]{Explicar Kanban}
-Por último, la gestión del proyecto se realizará siguiendo la metodología de desarrollo ágil Kanban para permitir construir de manera iterativa las distintas funcionalidades del proyecto.
-Hacer uso del método Kanban para el desarrollo y gestión del proyecto.
 
-\urgent[inline]{Desglosar más lo que es Kanban}
+\change[inline]{Definición de Kanban: “Kanban es un\ldots”}
 
+Se sacará la información de aquí principalmente:
+\cite{Cole2015-fd} % Teoría formal
+\cite{Stellman2014-qr} % Teoría formal
+
+\subsection{Principios de Kanban}
+\begin{itemize}
+    \item \textbf{Empieza con lo que tienes ya}: %Start with what you do now
+    \item \textbf{Comprométete al cambio evolutivo e incremental}: %Agree to pursue incremental, evolutionary change
+    \item \textbf{Respeta el proceso, los roles, las responsabilidades y títulos actuales}: %Respect the current process, roles, responsibilities and titles
+\end{itemize}
+
+\subsection{Prácticas de Kanban}
+\begin{itemize}
+    \item \textbf{Definir y visualizar el flujo de trabajo:} %Define and Visualise Workflow
+    \item \textbf{Limitar el trabajo en progreso:} %Limit work-in-progress
+    \item \textbf{Manejar el flujo de trabajo:} %Manage the flow of work
+    \item \textbf{Hacer explícito el proceso:} %Make the process explicit
+    \item \textbf{Mejorar colaborativamente:} %Improve collaboratively
+\end{itemize}
+
+% \subsection{Métricas de flujo}
+%! Cuidado, esta licencia es problemática y podría resultar complicado cumplir con ella
+% Orderly Disruption Limited, Daniel S. Vacanti, Inc. Offered for license under the Attribution
+% ShareAlike license of Creative Commons, accessible at http://creativecommons.org/licenses/by-
+% sa/4.0/legalcode and also described in summary form at http://creativecommons.org/licenses/by-sa/4.0/,
+% By using this Kanban GuideTM, you acknowledge that you have read and agree to be bound by the terms of
+% the Attribution ShareAlike license of Creative Commons.
+
+% \begin{itemize}
+%     \item \textbf{WIP}: The number of work items started but not finished
+%     (according to the DoW).
+%     \item \textbf{Throughput}: The number of work items finished per unit of
+%     time. Note the measurement of throughput is the exact count of work items.
+%     \item \textbf{Work Item Age}: The amount of elapsed time between when a work
+%     item started and the current time.
+%     \item \textbf{Cycle Time}: The amount of elapsed time between when a work
+%     item started and when a work item finished.
+% \end{itemize}
+
+\subsection{Artefactos de Kanban}
+\begin{itemize}
+    \item \textbf{Tablón}:
+    \item \textbf{Listas}:
+    \item \textbf{Cartas}:
+\end{itemize}
+
+\subsection{Definiendo los criterios de finalización}
+
+\subsection{Justificación de la metodología}
+\change[inline]{Por último, la gestión del proyecto se realizará siguiendo la
+metodología de desarrollo ágil Kanban para permitir construir de manera
+iterativa las distintas funcionalidades del proyecto. Hacer uso del método
+Kanban para el desarrollo y gestión del proyecto.}
+
+\change[inline]{No se puede definir una estimación de tiempo, por lo que se
+deberá usar una metodología ágil}
 
 % -----------------------------------------------------------------------------
 
-
 \subsection{Trello como herramienta de gestión}\label{subsec:trello}
+
+\change[inline]{Uno de los artefactos es el tablón como tal. Aquí se define Trello como tablón online/virtual}
+\change[inline]{Definición de Trello y un poco de transfondo}
+
+Se sacará la información de aquí:
+\cite{Brechner2015-dv} % Teoría aplicada (el de Xbox)
 \subsubsection{Significado de las listas}
+\change[inline]{Uno de los artefactos son las listas. Aquí se definen las escogidas}
+
 \begin{itemize}
     \item \textbf{Backlog:} Tareas de la iteración en espera de ser empezadas
     \item \textbf{To Do:} Tareas a realizarse
     \item \textbf{Doing:} Tareas que se están realizando
-    \item \textbf{Testing:}
+    \item \textbf{Testing:} Tareas que se están evaluando antes de darse por completadas
     \item \textbf{Done:} Tareas de la iteración terminadas
     \item \textbf{Approved:} Tareas discutidas y aprobadas
 \end{itemize}
 
+\subsubsection{Formato de las cartas}
+
+\change[inline]{Aquí se definen las cartas que son otro artefacto de Kanban. Conviene mejor usar capturas}
+
+%! Aquí conviene mejor una captura
+
+% \begin{markdown}
+%     # Ge.P-1: Definición de la metodología de gestión
+%     **Iteraciones:** 2
+%     **Código:** FeI
+%     **Tarea:** 1
+%     **Tiempo Estimado:** 0.0
+%     **Tiempo Usado:** 0.0
+%     **Desviación:** 0.0
+%     **Descripción:** nan
+% \end{markdown}
+
 \subsubsection{Significado de etiquetas}
+\change[inline]{Un añadido que se puede utilizar son las etiquetas como artefacto. Aquí se definen}
 \begin{itemize}
-    \item \textbf{Bug:}
-    \item \textbf{Bloqueado:}
-    \item \textbf{Pendiente:}
-    \item \textbf{No aceptada:}
+    \item \textbf{Bug:} Cuando se detecta un error y se debe arreglar
+    \item \textbf{Bloqueado:} Cuando una tarea no se puede completar debido a
+    otras circunstancias
+    \item \textbf{Pendiente:} Abreviado de “Pendiente de Retroalimentación”.
+    Indica que esta tarea debe discutirse en una reunión
+    \item \textbf{No aceptada:} Indica que la tarea no ha sido aceptada para
+    continuar en la siguiente iteración y debe retrabajarse, cambiarse o
+    descartarse.
 \end{itemize}
 
-\subsubsection{Formato de las cartas}
+\subsubsection{Criterios de movimiento de listas}
+\change[inline]{Se comentó que hay que definir el concepto de “finalizado” para cada lista. Aquí se hace eso}
+% Qué cosas se cumplen para que una carta se mueva a la siguiente lista. Agile Project Managament With Kanban pag. 24 (set limits on chaos and Step 4: Define done)
+% Pull Criteria
+
+
+
+
