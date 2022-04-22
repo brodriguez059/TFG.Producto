@@ -1,47 +1,86 @@
 \section{Metodología}\label{sec:metodologia}
 
-\change[inline]{Definición de Kanban: “Kanban es un\ldots”}
+% \change[inline]{Definición de Kanban: “Kanban es un\ldots”}
 
-Se sacará la información de aquí principalmente:
-\cite{Cole2015-fd} % Teoría formal
-\cite{Stellman2014-qr} % Teoría formal
+% Kanban is a method for process improvement used by agile teams. Teams that use
+% Kanban start by understanding the way that they currently build software, and
+% make improvements to it over time. Like Scrum and XP, Kanban requires a mindset.
+% Specifically, it requires the lean thinking mindset. We've already learned that
+% Lean is the name for a mindset, with values and principles. Teams that use
+% Kanban start by applying the Lean mindset to the way they work. This provides a
+% solid foundation which, combined with the Kanban method, gives them the means to
+% improve their process. When teams use Kanban to improve, they focus on
+% eliminating the waste from their process (including muda, mura, and muri, the
+% wastes of unevenness, overburdening, and futility that we learned about in
+% Chapter 8).
+El método Kanban tiene sus orígenes en las fábricas de coches de Toyota a manos
+de Taiichi Ohno. Fue creado como un simple sistema de planificación y
+administración de trabajo e inventario de cada fase de producción. Sin embargo,
+fue David J. Anderson quien definió y adaptó esta metodología para el uso en
+ingeniería y desarrollo de software. Además, contrario de lo que se cree, Kanban
+es una metodología ágil de mejora de procesos y no un framework de
+administración de proyectos. Así como muchos métodos de este tipo, se
+caracteriza principalmente por ser evolutivo e iterativo en el tiempo. Asimismo,
+Kanban comparte la misma ideología de trabajo con el método Lean hasta tal punto
+que se considera que es una especialización de esta última. Aplicando los
+principios y valores de este proceso, Kanban se centra en eliminar los
+desperdicios de tiempo y recursos que el equipo tiene. Por lo tanto, este
+proceso de mejora pide a los equipos de desarrollo empezar con una metodología
+ya existente para poder perfeccionarla gradualmente en el tiempo a través de la
+experimentación, el cálculo de distintas métricas de rendimiendo y la
+confirmación de resultados positivos según dichas medidas.
 
-Kanban is a method for process improvement used by agile teams. Teams that use
-Kanban start by understanding the way that they currently build software, and make
-improvements to it over time. Like Scrum and XP, Kanban requires a mindset.
-Specifically, it requires the lean thinking mindset. We've already learned that
-Lean is the
-name for a mindset, with values and principles. Teams that use Kanban start by
-applying the Lean mindset to the way they work. This provides a solid foundation
-which, combined with the Kanban method, gives them the means to improve their
-process. When teams use Kanban to improve, they focus on eliminating the waste
-from their process (including muda, mura, and muri—the wastes of unevenness,
-overburdening, and futility that we learned about in Chapter 8).
-Kanban is a manufacturing term, adapted for software development by David
-Anderson. Here's how he describes its relationship to Lean in his 2010 book,
-Kanban: “The
-Kanban Method introduces a complex adaptive system that is intended to catalyze a
-Lean outcome within an organization.” There are teams that apply Lean and lean
-thinking to software development without using Kanban, but Kanban is by far the
-most common—and, to many agile practitioners, the most effective—way to bring
-lean thinking into your organization.
-Kanban has a different focus from agile methodologies like Scrum and XP. Scrum
-primarily focuses on project management: the scope of the work that will be
-done, when
-that work will be delivered, and whether the outcome of that work meets the needs of
-the users and stakeholders. The focus of XP is software development. The XP values
-and practices are built around creating an environment conducive to development,
-and developing programmer habits that help them design and build code that's simple and easy to change.
+% Kanban is a method for process improvement, or a way to help teams improve the
+% way they build software and work together as a team, that's based on the Lean
+% mindset. Kanban teams start with what you do now by seeing the whole as it
+% exists today, and pursue incremental, evolutionary change to improve the system
+% gradually over time. The Kanban practice improve collaboratively, evolve
+% experimentally means taking measurements, making gradual improvements, and then
+% confirming that they worked using those measurements. Every team has a system
+% for building software (whether or not they recognize it), and the Lean idea of
+% systems thinking means helping the team understand that system. A kanban board
+% is a board way for Kanban teams to visualize their workflow. The kanban board
+% has columns that represent each stage in the workflow of a work item, with
+% stickies in the columns to represent each work item in the system that flow
+% across the board as they advance through the system. Kanban boards use work
+% items, not tasks, because Kanban is not a system for project management. When
+% Kanban teams limit work in progress (WIP), they add a number to a column on the
+% kanban board that represents that maximum number of work items allowed in that
+% stage in the workflow. Kanban teams work with their users, managers, and other
+% stakeholders to make sure that everyone agrees that when a column is at its WIP
+% limit, the team will focus their work elsewhere in the project and not advance
+% any more work items into that workflow stage.
 
-Kanban is about helping a team improve the way that they build software. A team that
-uses Kanban has a clear picture of what actions they use to build software, how they
-interact with the rest of the company, where they run into waste caused by
-inefficiency and unevenness, and how to improve over time by removing the root
-cause of
-that waste. When a team improves the way that they build software, it's traditionally
-called process improvement. Kanban is a good example of applying agile ideas (like the
-last responsible moment) to create a process improvement method that is
-straightforward and easy for teams to adopt.
+Todo equipo cuenta con un sistema para la implementación de código, ya sea que
+se siga una metodología formal como Scrum o que se disponga de una serie de
+reglas no definidas o reconocidas explícitamente. Como consecuencia de esto, lo
+único que se necesita para empezar a utilizar Kanban es identificar el proceso
+de desarrollo actual para poder formalizarlo y adaptarlo a esta metodología.
+
+% Kanban is a manufacturing term, adapted for software development by
+% David Anderson. Here's how he describes its relationship to Lean in his 2010
+% book, Kanban: “The Kanban Method introduces a complex adaptive system that is
+% intended to catalyze a Lean outcome within an organization.” There are teams
+% that apply Lean and lean thinking to software development without using Kanban,
+% but Kanban is by far the most common—and, to many agile practitioners, the most
+% effective—way to bring lean thinking into your organization. Kanban has a
+% different focus from agile methodologies like Scrum and XP.
+
+Scrum primarily focuses on project management: the scope of the work that will
+be done, when that work will be delivered, and whether the outcome of that work
+meets the needs of the users and stakeholders. The focus of XP is software
+development. The XP values and practices are built around creating an
+environment conducive to development, and developing programmer habits that help
+them design and build code that's simple and easy to change.
+
+Kanban is about helping a team improve the way that they build software. A team
+that uses Kanban has a clear picture of what actions they use to build software,
+how they interact with the rest of the company, where they run into waste caused
+by inefficiency and unevenness, and how to improve over time by removing the
+root cause of that waste. When a team improves the way that they build software,
+it's traditionally called process improvement. Kanban is a good example of
+applying agile ideas (like the last responsible moment) to create a process
+improvement method that is straightforward and easy for teams to adopt.
 
 So while Kanban is not a system for project management, it has a very important
 relationship with the project management used by the team. Kanban is intended to
@@ -60,34 +99,9 @@ Kanban's great for:
     \item Getting the team into an agile way of thinking.
 \end{itemize}
 
-Kanban is a method for process improvement, or a way to help
-teams improve the way they build software and work together as
-a team, that's based on the Lean mindset.
-Kanban teams start with what you do now by seeing the whole as
-it exists today, and pursue incremental, evolutionary change to
-improve the system gradually over time.
-The Kanban practice improve collaboratively, evolve experimentally means taking
-measurements, making gradual improvements, and then confirming that they worked
-using those measurements.
-Every team has a system for building software (whether or not
-they recognize it), and the Lean idea of systems thinking means
-helping the team understand that system.
-A kanban board is a board way for Kanban teams to visualize
-their workflow.
-The kanban board has columns that represent each stage in the
-workflow of a work item, with stickies in the columns to represent each work
-item in the system that flow across the board as they advance through the
-system.
-Kanban boards use work items, not tasks, because Kanban is not
-a system for project management.
-When Kanban teams limit work in progress (WIP), they add a
-number to a column on the kanban board that represents that
-maximum number of work items allowed in that stage in the
-workflow.
-Kanban teams work with their users, managers, and other stakeholders to make
-sure that everyone agrees that when a column is at its WIP limit, the team will
-focus their work elsewhere in the project and not advance any more work items
-into that workflow stage.
+Se sacará la información de aquí principalmente:
+\cite{Cole2015-fd} % Teoría formal
+\cite{Stellman2014-qr} % Teoría formal
 
 However,
 there are subtle, yet important, differences with Kanban:
