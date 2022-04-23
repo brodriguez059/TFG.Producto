@@ -1,55 +1,46 @@
 \section{Metodología}\label{sec:metodologia}
 
-% \change[inline]{Definición de Kanban: “Kanban es un\ldots”}
+A la hora de gestionar un proyecto, es recomendable definir una metodología de
+trabajo, seguimiento y control con el fin de asegurar el correcto cumplimiento y
+finalización de su lista de requisitos y objetivos. Tras investigar y plantear
+distintas alternativas, se ha escogido la metodología Kanban para desarrollar
+este proyecto.
 
-% Kanban is a method for process improvement used by agile teams. Teams that use
-% Kanban start by understanding the way that they currently build software, and
-% make improvements to it over time. Like Scrum and XP, Kanban requires a mindset.
-% Specifically, it requires the lean thinking mindset. We've already learned that
-% Lean is the name for a mindset, with values and principles. Teams that use
-% Kanban start by applying the Lean mindset to the way they work. This provides a
-% solid foundation which, combined with the Kanban method, gives them the means to
-% improve their process. When teams use Kanban to improve, they focus on
-% eliminating the waste from their process (including muda, mura, and muri, the
-% wastes of unevenness, overburdening, and futility that we learned about in
-% Chapter 8).
+El método Kanban como tal es útil si se desea:
+\begin{itemize}
+    \item Iniciar un proyecto de manera ágil, rápida, de coste nulo y bajo riesgo. % Getting off to a low-risk, zero-cost, agile, fast start.
+    \item Analizar y mejorar el proceso de trabajo ya existente. % Pinning down existing workflows and spotting glaring errors.
+    \item Controlar múltiples grupos de tareas. % Controlling multiple pieces of unconnected work.
+    \item Asegurar que el número de tareas en ejecución están dentro de un nivel aceptable. % Keeping the numbers of jobs in play down to an acceptable level.
+    \item Cambiar a una mentalidad de desarrollo ágil. % Getting the team into an agile way of thinking.
+\end{itemize}
+
+Esta sección, por tanto, estará dedicada a explicar los conceptos e ideas
+necesarias de cara a justificar la razón por la cual se ha escogido este método
+de trabajo. Además, es necesario mencionar que esta información será resumida
+principalmente de \cite{Cole2015-fd} y \cite{Stellman2014-qr}, siendo éstas las
+referencias recomendadas en caso de desear más detalles al respecto.
+\subsection{Definición}
+
 El método Kanban tiene sus orígenes en las fábricas de coches de Toyota a manos
 de Taiichi Ohno. Fue creado como un simple sistema de planificación y
 administración de trabajo e inventario de cada fase de producción. Sin embargo,
 fue David J. Anderson quien definió y adaptó esta metodología para el uso en
-ingeniería y desarrollo de software. Además, contrario de lo que se cree, Kanban
-es una metodología ágil de mejora de procesos y no un framework de
-administración de proyectos. Así como muchos métodos de este tipo, se
-caracteriza principalmente por ser evolutivo e iterativo en el tiempo. Asimismo,
-Kanban comparte la misma ideología de trabajo con el método Lean hasta tal punto
-que se considera que es una especialización de esta última. Aplicando los
-principios y valores de este proceso, Kanban se centra en eliminar los
+ingeniería y desarrollo de software.
+
+Es necesario mencionar que, contrario a lo que se piensa normalmente, Kanban es
+una metodología ágil de mejora de procesos y no un framework de administración
+de proyectos. Y así como muchos métodos de este tipo, se caracteriza
+principalmente por ser evolutivo e iterativo en el tiempo.
+
+Asimismo, Kanban comparte la misma ideología de trabajo con el método Lean hasta
+tal punto que se considera que es una especialización de esta última. Aplicando
+los principios y valores de este proceso, Kanban se centra en eliminar los
 desperdicios de tiempo y recursos que el equipo tiene. Por lo tanto, este
 proceso de mejora pide a los equipos de desarrollo empezar con una metodología
 ya existente para poder perfeccionarla gradualmente en el tiempo a través de la
 experimentación, el cálculo de distintas métricas de rendimiendo y la
 confirmación de resultados positivos según dichas medidas.
-
-% Kanban is a method for process improvement, or a way to help teams improve the
-% way they build software and work together as a team, that's based on the Lean
-% mindset. Kanban teams start with what you do now by seeing the whole as it
-% exists today, and pursue incremental, evolutionary change to improve the system
-% gradually over time. The Kanban practice improve collaboratively, evolve
-% experimentally means taking measurements, making gradual improvements, and then
-% confirming that they worked using those measurements. Every team has a system
-% for building software (whether or not they recognize it), and the Lean idea of
-% systems thinking means helping the team understand that system. A kanban board
-% is a board way for Kanban teams to visualize their workflow. The kanban board
-% has columns that represent each stage in the workflow of a work item, with
-% stickies in the columns to represent each work item in the system that flow
-% across the board as they advance through the system. Kanban boards use work
-% items, not tasks, because Kanban is not a system for project management. When
-% Kanban teams limit work in progress (WIP), they add a number to a column on the
-% kanban board that represents that maximum number of work items allowed in that
-% stage in the workflow. Kanban teams work with their users, managers, and other
-% stakeholders to make sure that everyone agrees that when a column is at its WIP
-% limit, the team will focus their work elsewhere in the project and not advance
-% any more work items into that workflow stage.
 
 Todo equipo cuenta con un sistema para la implementación de código, ya sea que
 se siga una metodología formal como Scrum o que se disponga de una serie de
@@ -57,117 +48,23 @@ reglas no definidas o reconocidas explícitamente. Como consecuencia de esto, lo
 único que se necesita para empezar a utilizar Kanban es identificar el proceso
 de desarrollo actual para poder formalizarlo y adaptarlo a esta metodología.
 
-% Kanban is a manufacturing term, adapted for software development by
-% David Anderson. Here's how he describes its relationship to Lean in his 2010
-% book, Kanban: “The Kanban Method introduces a complex adaptive system that is
-% intended to catalyze a Lean outcome within an organization.” There are teams
-% that apply Lean and lean thinking to software development without using Kanban,
-% but Kanban is by far the most common—and, to many agile practitioners, the most
-% effective—way to bring lean thinking into your organization. Kanban has a
-% different focus from agile methodologies like Scrum and XP.
-
-Scrum primarily focuses on project management: the scope of the work that will
-be done, when that work will be delivered, and whether the outcome of that work
-meets the needs of the users and stakeholders. The focus of XP is software
-development. The XP values and practices are built around creating an
-environment conducive to development, and developing programmer habits that help
-them design and build code that's simple and easy to change.
-
-Kanban is about helping a team improve the way that they build software. A team
-that uses Kanban has a clear picture of what actions they use to build software,
-how they interact with the rest of the company, where they run into waste caused
-by inefficiency and unevenness, and how to improve over time by removing the
-root cause of that waste. When a team improves the way that they build software,
-it's traditionally called process improvement. Kanban is a good example of
-applying agile ideas (like the last responsible moment) to create a process
-improvement method that is straightforward and easy for teams to adopt.
-
-So while Kanban is not a system for project management, it has a very important
-relationship with the project management used by the team. Kanban is intended to
-improve and change the process in use on the project and that this can and will affect
-how the project is managed. Typically, Kanban is used to improve predictability of
-flow, and this will affect planning and scheduling on the project. Extensive use of
-Kanban and its metrics is likely to have a significant knock-on effect on the method
-of project management
-
-Kanban's great for:
-\begin{itemize}
-    \item Getting off to a low-risk, zero-cost, agile, fast start.
-    \item Pinning down existing workflows and spotting glaring errors.
-    \item Controlling multiple pieces of unconnected work.
-    \item Keeping the numbers of jobs in play down to an acceptable level.
-    \item Getting the team into an agile way of thinking.
-\end{itemize}
-
-Se sacará la información de aquí principalmente:
-\cite{Cole2015-fd} % Teoría formal
-\cite{Stellman2014-qr} % Teoría formal
-
-However,
-there are subtle, yet important, differences with Kanban:
-
-All work is of a similar size. It's better to have smaller
-stories of roughly equal size. Splitting large pieces of work
-down into smaller, similar sized packages has been proven
-to improve workflow and results in more predictive end-to-
-end cycle times. Comparing like-for-like can also aid the
-review process.
-
-The backlog is refined more regularly. The Kanban
-backlog tends to be exceptionally dynamic especially
-in a support type environment. Backlogs in other agile
-environments are far from static but they're just a touch
-less zippy. It's not unusual to review a Kanban backlog on a
-daily basis.
-
-Jobs are pulled not pushed. A Kanban team adopts a
-what's next policy rather than packaging up work into a
-connected delivery. The task assigned the highest priority is
-pulled into play when resource becomes available.
+Así pues, aunque Kanban no es un sistema de gestión de proyectos, es posible
+hacer uso de éste para ello al tener como principal objetivo aumentar la
+predictabilidad del flujo de trabajo y así mejorar la planificación del proyecto
+como tal.
 
 \subsection{Principios de Kanban}
+Al ser una especialización del método Lean, se tiene una serie de principios
+directores en esta metodología. Especificamente se pueden listar los siguientes
+tres:
 \begin{itemize}
-    \item \textbf{Empieza con lo que tienes ya}: %Start with what you do now
-    The thing about habitual problems is that they're habitual.
-When your team does something on a project that will eventually lead to bugs and
-missed deadlines, it doesn't feel like a mistake at the time. You can do all the root-
-cause analysis that you want after the fact; faced with the same choice, the team will
-probably still make the same decision. That's how people are.
-For example, let's say that a programming team always finds themselves delivering
-software to their users, only to repeatedly have awkward meetings where users can't
-find the features they think they were promised. Now, it's certainly possible that these
-developers are incredibly forgetful, and that they always forget one or two of
-the features that they discussed with the users. But it's more likely that they
-have a recurring
-problem with how they gather their requirements or communicate them to the users.
-The goal of process improvement is to find recurring problems, figure out what those
-problems have in common, and come up with tools to fix them.
-The key here is the second part of that sentence: figuring out what those problems
-have in common. If you just assume, for example, that a developer simply can't
-remember all of the things the users asked for, or that the users constantly change
-their minds, then you've effectively decided that the problems are unfixable. But if
-you assume that there's a real root cause that's happening over and over again, then
-you stand a chance of finding and fixing it.
-That's where Kanban starts: taking a look at how you work today, and treating it as a
-set of changeable, repeatable steps. Kanban teams call steps or rules that they always
-follow policies. This essentially boils down to a team recognizing their habits, seeing
-what steps they take every time they build software, and writing all of those things
-down.
-Writing down the rules that a team follows can sometimes be tricky, because it's easy
-to fall into the trap of judging a team—or an individual team member—on the results
-of a project: if the project is successful, everyone on the team must be good at their
-jobs; if the project fails, they must be incompetent. This is unfair, because it assumes
-that everything in the project is within the control of the team. Lean thinking helps
-get past this by telling us to see the whole, which in this case means seeing that there's
-a bigger system in place.
-That's worth repeating: every team has a system for building software. This system may
-be chaotic. It may change frequently. It may exist mainly inside the heads of the team
-members, who never actually discussed a larger system that they follow. For teams
-that follow a methodology like Scrum, the system is codified and understood by
-everyone. But many teams follow a system that exists mainly as “tribal” knowledge:
-we always start a project by talking to these particular customer representatives, or
-building that sort of schedule, or creating story cards, or having programmers jump
-in and immediately start to code after a quick meeting with a manager.
+    \item \textbf{Empieza con lo que se hace actualmente}: %Start with what you do now
+    Como se había mencionado anteriormente, el método Kanban pide requiere de un
+    proceso o metodología inicial. Es a través del análisis y la comprensión de
+    dicho proceso que Kanban permite perfeccionarlo iterativamente. Pero como
+    consecuencia de esto, no es posible aplicar Kanban adecuadamente si se
+    desconoce la metodología que usa el equipo de desarrollo.
+
     \item \textbf{Comprométete al cambio evolutivo e incremental}: %Agree to pursue incremental, evolutionary change
     This is the system that Kanban starts with. The team already has a way to run their
 project. Kanban just asks them to understand that system. That's what it means to
@@ -209,28 +106,28 @@ you practices to improve it.
 
 \subsection{Prácticas de Kanban}
 
-It is not expected that implementations adopt all six practices initially. Partial implementations are referred to as “shallow” with the expectation that they gradually
-increase in depth as more practices are adopted and implemented with greater
-capability.
+El método Kanban, además, define explícitamente una serie de prácticas a llevar
+a cabo con el fin de aplicar correctamente la mejora de procesos que éste
+permite. Sin embargo, no es totalmente necesario hacer uso de todas estas en su
+totalidad al iniciar con el método. El método tiene específicamente los
+siguientes seis principios:
 
 \begin{itemize}
     \item \textbf{Definir y visualizar el flujo de trabajo}: %Define and Visualise Workflow
-    Kick off with a visual representation
-    of the flow of work going from to-do to done status. Many
-    prefer to add only one other step in between: in progress.
-    Others prefer to break the workflow down into a series of
-    procedural stages such as: plan, design, draft, build, test,
-    deploy, with to-do and done as bookends.
-    In Kanban, visualizing means writing down exactly what the team does, warts and all,
-without embellishing it. This is part of lean thinking: a Kanban team takes the Lean
-principle of see the whole very seriously. When the team has the right mindset, it just
-feels wrong to tinker with the workflow while you're trying to visualize it, because that
-would interfere with seeing the whole. The value of decide as late as possible is also
-important here: you don't have all of the information about how you build software
-yet, so there's a later responsible moment to make decisions about how you'll
-change it. A kanban board is a tool that teams use to visualize their workflow. (The K in the
-methodology name Kanban is typically uppercase; the k in kanban board is usually
-lowercase.)
+    Kick off with a visual representation of the flow of work going from to-do to
+    done status. Many prefer to add only one other step in between: in progress.
+    Others prefer to break the workflow down into a series of procedural stages such
+    as: plan, design, draft, build, test, deploy, with to-do and done as bookends.
+    In Kanban, visualizing means writing down exactly what the team does, warts and
+    all, without embellishing it. This is part of lean thinking: a Kanban team takes
+    the Lean principle of see the whole very seriously. When the team has the right
+    mindset, it just feels wrong to tinker with the workflow while you're trying to
+    visualize it, because that would interfere with seeing the whole. The value of
+    decide as late as possible is also important here: you don't have all of the
+    information about how you build software yet, so there's a later responsible
+    moment to make decisions about how you'll change it. A kanban board is a tool
+    that teams use to visualize their workflow. (The K in the methodology name
+    Kanban is typically uppercase; the k in kanban board is usually lowercase.)
 
     \item \textbf{Limitar el trabajo en progreso}: %Limit work-in-progress
     Trying to do too many things at
