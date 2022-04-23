@@ -48,7 +48,7 @@ reglas no definidas o reconocidas explícitamente. Como consecuencia de esto, lo
 único que se necesita para empezar a utilizar Kanban es identificar el proceso
 de desarrollo actual para poder formalizarlo y adaptarlo a esta metodología.
 
-Así pues, aunque Kanban no es un sistema de gestión de proyectos, es posible
+Por tanto, aunque Kanban no es un sistema de gestión de proyectos, es posible
 hacer uso de éste para ello al tener como principal objetivo aumentar la
 predictabilidad del flujo de trabajo y así mejorar la planificación del proyecto
 como tal.
@@ -66,183 +66,78 @@ tres:
     desconoce la metodología que usa el equipo de desarrollo.
 
     \item \textbf{Comprométete al cambio evolutivo e incremental}: %Agree to pursue incremental, evolutionary change
-    This is the system that Kanban starts with. The team already has a way to run their
-project. Kanban just asks them to understand that system. That's what it means to
-start with what you do now. The goal of Kanban is to make small improvements to
-that system. That's what it means to pursue incremental, evolutionary change—and
-why Kanban has the practice improve collaboratively, evolve experimentally. In
-lean thinking, part of seeing the whole is taking measurements, and measurements
-are at the core of experimentation and the scientific method. A Kanban team will
-start with their system for building software, and take measurements to get an
-objective understanding of it. Then they'll make specific changes as a
-team—later in this
-chapter, you'll learn exactly how those changes work—and check their measurements
-to see if those changes have the desired effect.
-    \item \textbf{Respeta el proceso, los roles, las responsabilidades y títulos actuales}: %Respect the current process, roles, responsibilities and titles
-    The Lean value of amplifying learning is also an important part of evolving the system that your team uses to build software. Throughout this book you've learned
-about feedback loops. When you collaborate to measure the system and evolve
-experimentally, those feedback loops become a very important tool for gathering
-information and feeding it back into the system; the Kanban practice of
-implementing feedback loops should make sense to you, and should help you to see
-how Kanban and Lean are closely linked.
-Amplifying learning also factors into the Kanban principle of initially
-respecting current roles and responsibilities. For example, say that a team
-always starts each project
-with a meeting between a project manager, a business analyst, and a programmer.
-They may not have written down a rule for what goes on in that meeting, but you
-probably have a good idea of what goes on in it just from reading those job titles.
-That's one reason why Kanban respects current roles, responsibilities, and job titles—
-because they're an important part of the system.
-A common theme between all of these principles is that Kanban only works for a
-team when they take the time to understand their own system for building software.
-If there was one right way to build software, everyone would just use it. But we
-started this book by saying back in Chapter 2 that there is no silver bullet—there's no
-single set of “best” practices that will guarantee that a team builds software right every
-time. Even the same team, using the same practices, can have success with one project
-but fail miserably in the next one. This is why Kanban starts with understanding the
-current system for running the project: once you see the whole system, Kanban gives
-you practices to improve it.
+    Aunque parezca muy repetitivo, es necesario volver a mencionar que el
+    objetivo de Kanban es la mejora gradual del sistema. A eso se refiere el
+    cambio evolutivo e incremental y es por eso que el método pide calcular
+    métricas de control. Es a través de estas medidas que se llegan a conocer
+    las partes mejores del proceso de desarrollo.
+
+    \item \textbf{Respeta el proceso, los roles, las responsabilidades y títulos
+    actuales}: %Respect the current process, roles, responsibilities and titles
+    Cuando el equipo de trabajo dedica tiempo a medir el rendimiento del
+    sistema, es posible encontrar ciclos de retroalimentación que contienen
+    información importante para la mejora evolutiva del proceso. Sin embargo,
+    para poder aplicar dicha información es necesario conocer cómo se aplica
+    ésta a cada rol del equipo. Por esta razón Kanban considera relevante
+    respetar las responsabilidades y roles asociadas a cada miembro del grupo.
 \end{itemize}
 
 \subsection{Prácticas de Kanban}
 
 El método Kanban, además, define explícitamente una serie de prácticas a llevar
 a cabo con el fin de aplicar correctamente la mejora de procesos que éste
-permite. Sin embargo, no es totalmente necesario hacer uso de todas estas en su
-totalidad al iniciar con el método. El método tiene específicamente los
-siguientes seis principios:
+permite. Sin embargo, no es necesario hacer uso de todas estas en su totalidad
+al iniciar con el método. Kanban tiene específicamente los siguientes seis principios:
 
 \begin{itemize}
     \item \textbf{Definir y visualizar el flujo de trabajo}: %Define and Visualise Workflow
-    Kick off with a visual representation of the flow of work going from to-do to
-    done status. Many prefer to add only one other step in between: in progress.
-    Others prefer to break the workflow down into a series of procedural stages such
-    as: plan, design, draft, build, test, deploy, with to-do and done as bookends.
-    In Kanban, visualizing means writing down exactly what the team does, warts and
-    all, without embellishing it. This is part of lean thinking: a Kanban team takes
-    the Lean principle of see the whole very seriously. When the team has the right
-    mindset, it just feels wrong to tinker with the workflow while you're trying to
-    visualize it, because that would interfere with seeing the whole. The value of
-    decide as late as possible is also important here: you don't have all of the
-    information about how you build software yet, so there's a later responsible
-    moment to make decisions about how you'll change it. A kanban board is a tool
-    that teams use to visualize their workflow. (The K in the methodology name
-    Kanban is typically uppercase; the k in kanban board is usually lowercase.)
+    Con el fin de familiarizarse más con el proceso de trabajo, Kanban pide
+    hacer uso de representaciones visuales de éste a través de tablones, listas
+    de trabajo y elementos de trabajo. La combinación de dichos componentes
+    permite definir el flujo de trabajo en su totalidad de una manera fácilmente
+    entendible. En Kanban, visualizar significa anotar exactamente lo que hace
+    el equipo sin embellecer los detalles con el fin de observar el sistema en
+    su totalidad.
 
     \item \textbf{Limitar el trabajo en progreso}: %Limit work-in-progress
-    Trying to do too many things at
-    the same time is a proven recipe for disaster; it applies equally
-    at an individual level and to teams. Kanban limits the number
-    of items allowed to be on the go at any one time - known as
-    the work-in-progress (WiP) - to ensure optimum efficiency.
-    Common sense is enough to get started and then experience
-    will help fine tune to pin down the optimal WiP limit.
-    A team can only do so much work at a time. We learned this with both Scrum and
-    XP, and it's an important part of lean thinking as well. When a team agrees to do
-    more work than they can actually accomplish by the time they'd agreed to deliver it,
-    bad things happen. They either leave some of the work out of the delivery, do a poor
-    job of building the product, or work at an unsustainable pace that will cost dearly in
-    future releases. And sometimes it's not obvious that a team has taken on more work
-    than they can handle: each individual deadline may seem reasonable for the work
-    being done, but if each person is expected to multitask on multiple projects or tasks at
-    the same time, the team slowly becomes overburdened, and the extra effort required
-    for task switching can eat up as much as half of their productivity.
-    Visualizing the workflow helps the team see this overburdening problem clearly, and
-    that's the first step toward fixing the problem. Unevenness and overburdening—
-    which we learned about in Chatper 8—become clear on the kanban board when
-    stickies always pile up in one column. Luckily, queuing theory doesn't just alert us to
-    the problem; it also gives us a way to fix it. Once unevenness in the workflow has
-    been identified, we can use it to control the amount of work that flows through the
-    whole system by placing a strict limit on the amount of work that is allowed to pile up
-    behind it. This is what's behind the Kanban practice limit work in progress.
-    Limiting work in progress (WIP) means setting a limit on the number of work items
-    that can be in a particular stage in the project's workflow. A lot of people tend to focus
-    on moving work items through the workflow as fast as they can. And for a single
-    work item, that workflow is linear: if you're a developer and you're done with the
-    design for a feature, and your workflow says that the next thing you do with it is build
-    it and then send it on to a tester, the next thing you're going to do is build the code
-    for it—and it's easy to become fixated on getting that feature built and sent on to the
-    tester as quickly as possible because it was the last thing you were working on.
-    But what if the test team is already working on more features than they can test right
-    now? It doesn't make sense to jump into development for this feature if it will just end
-    up waiting around because nobody's ready to test it. That would cause overburdening
-    for the test team. So what can be done about it?
-    For this, Kanban goes back to lean thinking—specifically, the principle of options
-    thinking that you learned about in Chapter 8. One reason that a Kanban team uses a
-    kanban board is because it shows all of your options. If you're that developer who just
-    finished the design for a feature, it's easy to think that you now have a commitment to
-    work on the code next. But working on the code for that particular feature is an
-    option, not a commitment. When you look at the whole kanban board, you'll see
-    many stickies that you can work on next. Maybe there are other stickies in earlier col-
-    umns for other features that need to be designed, or ones in later columns for features
-    with bugs that the testers found that need to be fixed. In fact, most of the time you
-    have many options that you can choose from. Which do you choose first?
-    Setting a WIP limit for a step in your workflow means limiting the number of fea-
-    tures that are allowed to move into that step. This helps limit the team's options to
-    make that decision easier in a way that will prevent overburdening and keep the fea-
-    tures flowing through the workflow as efficiently as possible. When you finish
-    designing that feature, for example, and you see that the workflow is already at its
-    limit for writing code, then you'll look for other options and work on them instead—
-    and the test team won't get overburdened. (Think about this for a minute: can you see
-    how this will reduce the average lead time for a feature? If so, then you're starting to
-    get the hang of systems thinking!)
+    En el método Kanban los distintos trabajos a realizar en el proceso de
+    desarrollo tienen un límite de tareas en ejecución en un determinado
+    momento. La justificación que se le da a este principio recae en el hecho de
+    que realizar múltiples labores a la vez reduce la eficiencia del equipo. A
+    dicho límite se le conoce como \emph{WiP} (de sus siglas en inglés
+    \emph{Work-in-Progress}).
 
     \item \textbf{Manejar el flujo de trabajo}: %Manage the flow of work
-    The aim is to achieve a fast,
-    smooth movement from to-do to done. If so it means the
-    process is operating at optimum efficiency thus creating
-    maximum business value in the shortest time possible. An
-    important add-on is for it to be repeatable and consistent.
-    As teams continue to deliver work, they identify workflow problems and adjust their
-WIP limits so that the feedback loops provide enough information without causing
-thrashing. The flow of the system is the rate at which work items move through it.
-When the team finds an optimal pace for delivery combined with a comfortable
-amount of feedback, they've maximized the flow. Cutting down on the unevenness
-and overburdening, and letting your teams finish each task and move on to the next
-one, increases the flow of work through your project. When unevenness in the system
-causes work to pile up, it interrupts the work and decreases the flow. A Kanban team
-uses the manage flow practice by measuring the flow and taking active steps to
-improve it for the team.
-You already know what it feels like when work is flowing. You feel like you're getting a
-    lot accomplished, and that you aren't wasting time or stuck waiting for
-    someone else to do something for you. The personal feeling of being on a team with a lot of flow is
-    that every day, all day, you have the feeling that you're doing something valuable.
-    That's what everyone is striving for.
-    You also know what it feels like when work doesn't flow. It feels like you're mired in
-    muck, and that you're barely making progress. It feels like you're always waiting for
-    someone to finish building something that you need, or to make a decision that
-    affects your work, or to approve some ticket, or somehow always find some other way
-    to block your work—even when you know that nobody is intentionally trying to
-    block it. It feels uncoordinated and disjointed, and you spend a lot of time explaining
-    to other people why you're waiting. It's not that you're underallocated; your project
-    team is probably 100\% allocated, or even overallocated. But while your project plan
-    may say that you're 90\% done, it feels like there's still 90\% of the project left to go.
-    And your users know what it feels like when work doesn't flow, because their lead
-    times keep going up. It seems like the team takes longer and longer to respond to
-    their requests, and even simple features seem to take forever to build.
-    The whole point of Kanban is to increase flow, and to get the whole team involved in
-    increasing that flow. When the flow increases, frustration with unevenness and long
-    lead times decreases.
+    Una vez definido el flujo de trabajo, el objetivo será conseguir una rápida
+    y suave transición entre los distintos grupos de tareas, desde la lista de
+    trabajo a empezar hasta dar por finalizada la labor. Si se consigue esta
+    velocidad de flujo, se dice que se está operando con la eficiencia óptima y
+    es en este momento que se crea el máximo valor laboral en el menor tiempo
+    posible. A medida que el equipo desarrolla, se van encontrando los cuellos
+    de botella y ajustando los límites de trabajo.
 
     \item \textbf{Hacer explícitas las políticas de proceso}: %Make the process explicit
-    An unambiguous statement
-    of how work gets done is essential for any objective review.
-    With a common understanding it's easier to discuss issues
-    impartially and reach a consensus on improvements. There
-    must be a natural checkpoint at the end of each step with
-    clear rules for moving on to the next one.
+    Para poder obtener un flujo de trabajo óptimo, además, es necesario definir
+    los objetivos que se deben cumplir para dar por terminada una serie de
+    tareas con el fin de determinar cuándo se avanza de estado. Dichas
+    condiciones de finalización, sin embargo, siempre irán ligadas al tipo de
+    proceso que se está utilizando y, por tanto, deberán ser discutidas y
+    especificadas por el equipo.
 
     \item \textbf{Implementar ciclos de retroalimentación}: %Implement Feedback Loops
+    Como se había mencionado anteriormente, los ciclos de retroalimentación
+    permiten identificar la información necesaria para aplicar mejoras en el
+    proceso de desarrollo. Kanban define dichos ciclos como la combinación de
+    limitaciones que permiten dar a conocer los puntos débiles del equipo y su
+    correcta implementación requiere de experimentación y análisis del
+    rendimiento general del sistema.
 
     \item \textbf{Mejorar colaborativamente}: %Improve collaboratively
-    Once the spotlight is on the
-    workflow, ideas start to develop about how it can be
-    improved. The WiP limit plays a key role in sparking
-    discussions by forcing the team to focus on blockers to work
-    in play when the limit is reached. An initial cap of no more
-    than two tasks per person soon highlights problems that
-    impede the flow; then the team simply faces up to those
-    issues and resolves them.
+    Una vez que Kanban ya está implementado y el foco de atención recae en el
+    flujo de trabajo, el carácter de mejora incremental del método vuelve a
+    salir a la luz. Es a través de la discusión, análisis y puesta en marcha de
+    nuevas ideas que el equipo puede encontrar bloqueos en el proceso y
+    adaptarse a cambios rápidamente.
 \end{itemize}
 
 \subsection{Métricas de flujo}
