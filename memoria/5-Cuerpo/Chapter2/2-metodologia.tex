@@ -105,7 +105,7 @@ al iniciar con el método. Kanban tiene específicamente los siguientes seis pri
     momento. La justificación que se le da a este principio recae en el hecho de
     que realizar múltiples labores a la vez reduce la eficiencia del equipo. A
     dicho límite se le conoce como \emph{WiP} (de sus siglas en inglés
-    \emph{Work-in-Progress}).
+    \emph{Work-in-Progress}) o \emph{Trabajo en Progreso}.
 
     \item \textbf{Manejar el flujo de trabajo}: %Manage the flow of work
     Una vez definido el flujo de trabajo, el objetivo será conseguir una rápida
@@ -140,6 +140,74 @@ al iniciar con el método. Kanban tiene específicamente los siguientes seis pri
     adaptarse a cambios rápidamente.
 \end{itemize}
 
+\subsection{Herramientas de Kanban}
+
+Para poder hacer uso de los principios y aplicar correctamente las prácticas del
+método, existen una serie de herramientas y artefactos comunes dentro de la
+metodología Kanban.
+
+\improvement[inline]{INSERTAR UNA IMAGEN DE UN TABLÓN KANBAN COMPLETO}
+
+Como se puede observar en la figura ()\urgent{PONER LA REFERENCIA A LA IMAGEN
+DEL TABLÓN KANBAN}, muchos de los elementos visibles ya
+habían sido referenciados anteriormente. Sin embargo, se procederá a dar una
+explicación detallada de lo que representan y qué rol cumplen:
+
+\begin{itemize}
+    \item \textbf{Tablón}: % kanban board
+    Como núcleo de la visualización del proceso está el tablón kanban (nótese la
+    diferencia en la capitalización del nombre). Dichos tablones contienen las
+    listas de tareas a realizar y permiten observar el flujo de trabajo del
+    equipo a través de columnas y cartas. Cada grupo deberá especificar su
+    propio tablón kanban en función de su proceso de desarrollo y es a través de
+    éste que se podrán calcular las métricas, encontrar los ciclos de
+    retroalimentación y determinar qué se debe mejorar para maximizar la
+    eficiencia.
+
+    \item \textbf{Listas o Columnas}:
+    Para poder visualizar correctamente el flujo de trabajo dentro del tablón
+    kanban se hacen uso de listas de tareas o columnas. Dichos elementos
+    representarán los pasos que debe seguir una tarea para pasar por todo el
+    flujo desde que se plantea como labor hasta que se finaliza. En el método se
+    dice que las tareas son \emph{tiradas} a la siguiente lista una vez que se
+    cumplen las condiciones de finalización de la columna en la que se
+    encuentra. Entre los tipos de columnas que se pueden encontrar están:
+    \begin{itemize}
+        \item \textbf{Backlog}: Contiene la lista de tareas que se plantean
+        realizar, pero aún no se han empezado o que pueden terminar siendo
+        descartados. Éstas son las ideas de lo que se quiere desarrollar, pero
+        que aún no se han materializado en labor. Dichos elementos deberán estar
+        enfocados a contribuir con los objetivos del producto a implementar.
+        \item \textbf{Terminado}: Contiene la lista de tareas que se han dado
+        por finalizadas en su totalidad. Esta columna es la última del tablón
+        para el equipo y aquí es donde estarán todas las tareas completadas una
+        vez que han pasado por todo el flujo de desarrollo.
+        \item \textbf{Listas intermedias}: El tablón kanban, al depender mucho
+        proceso del equipo y no poder ser estandarizado, hará uso también de
+        distintas columnas intermedias entre el \emph{backlog} y la columna de
+        tareas finalizadas. Dichas listas serán representativas del flujo de
+        trabajo que sigue el grupo como tal para desarrollar el proyecto.
+        Tipicamente se pueden encontrar columnas como: \emph{a diseñar}, \emph{a
+        empezar}, \emph{en progreso}, \emph{en verificación}, entre otras.
+    \end{itemize}
+
+    \item \textbf{WiP}: Con el fin de aplicar las prácticas de limitación y
+    manejo del flujo de trabajo, a cada columna se le asigna un límite de tareas
+    que puede contener en un determinado momento. Si dicha lista llega a su
+    límite, no se podrán traer tareas a ella hasta que se liberé de los labores
+    que contiene. Normalmente dicho límite se escribe al lado del nombre de su
+    respectiva columna.
+
+    \item \textbf{Cartas}:
+    Así como el tablón kanban contiene listas de trabajo, dichas columnas
+    también contienen unos elementos conocidos como \emph{cartas}. Éstas
+    representan las actividades y trabajos a realizar con el fin de avanzar con
+    proyecto, siempre teniendo en cuenta que dichos elementos deben aumentar el
+    valor del producto y tienen que ser significados para su finalización.
+\end{itemize}
+
+\subsection{Definiendo los criterios de finalización}
+
 \subsection{Métricas de flujo}
 \urgent{TRADUCIR Y FINALIZAR}
 % Orderly Disruption Limited, Daniel S. Vacanti, Inc. Offered for license under the Attribution
@@ -149,71 +217,15 @@ al iniciar con el método. Kanban tiene específicamente los siguientes seis pri
 % the Attribution ShareAlike license of Creative Commons.
 
 \begin{itemize}
-    \item \textbf{Trabajo en progreso}: The number of work items started but not finished
-    (according to the DoW).
-    \item \textbf{Rendimiento}: The number of work items finished per unit of
-    time. Note the measurement of throughput is the exact count of work items.
-    \item \textbf{Edad del elemento de trabajo}: The amount of elapsed time between when a work
-    item started and the current time.
-    \item \textbf{Tiempo de ciclo}: The amount of elapsed time between when a work
-    item started and when a work item finished.
+    \item \textbf{Trabajo en progreso}: Es el número de elementos o cartas de
+    trabajo iniciados pero no finalizados.
+    \item \textbf{Rendimiento}: Es el número de elementos de trabajo finalizados
+    por unidad de tiempo.
+    \item \textbf{Edad del elemento de trabajo}: Es el tiempo transcurrido desde
+    que se inició el trabajo hasta el momento actual.
+    \item \textbf{Tiempo de ciclo}: Es la cantidad de tiempo transcurrido desde
+    que se inicia un trabajo y se termina.
 \end{itemize}
-
-\subsection{Herramientas de Kanban}
-\begin{itemize}
-    \item \textbf{Tablón}:
-    At the heart of the Kanban method is a deceptively clever tool:
-    the Kanban board. Calling these boards a visual to-do list is an
-    over-simplification but a decent starting point. The board is a
-    graphic representation of the work to be done and the end-to-end
-    flow from start to finish. The simplest and some argue the most
-    pure Kanban board consists of just three columns: things to do,
-    tasks in progress and finally work done. This simple format is
-    universal and matches any project or corporate workflow.
-    A kanban board is a tool that teams use to visualize their workflow. (The K in the
-    methodology name Kanban is typically uppercase; the k in kanban board is usually
-    lowercase.) A kanban board looks a lot like a Scrum task board: it typically consists of
-    columns drawn on a whiteboard, with sticky notes stuck in each column. (It's more
-    common to find sticky notes stuck to kanban boards than it is to find index cards.)
-    There are three very important differences between a task board and a kanban board.
-    You already learned about the first difference: that kanban boards only have stories,
-    and do not show tasks. Another difference is that columns in kanban boards usually
-    vary from team to team. Finally, kanban boards can set limits on the amount of work
-    in a column. We'll talk about those limits later on; for now, let's concentrate on the
-    columns themselves, and how different teams using Kanban will often have different
-    columns in their kanban boards. One team's board might have familiar To Do, In Pro-
-    gress, and Done columns. But another team's board could have entirely different
-    columns.
-    When a team wants to adopt Kanban, the first thing that they do is visualize the
-    workflow by creating a kanban board. For example, one of the first kanban boards in
-    David Anderson's book, Kanban, has these columns: Input Queue, Analysis (In Prog),
-    Analysis (Done), Dev Ready, Development (In Prog), Development (Done), Build
-    Ready, Test, and Release Ready. This board would be used by a team that follows a
-    process where each feature goes through analysis, development, build, and test. So
-    they might start off with a kanban board like the one shown in Figure 9-1, with sticky
-    notes in the columns representing the work items flowing through the system.
-    \item \textbf{Listas}:
-    Keep it simple to start with and try out the four previously
-    suggested stages: ideas, to do, doing and done. The demarcation between each
-    status is clear and in turn generates the triggers for moving cards on:
-    \begin{itemize}
-        \item \textbf{Backlog}: the maybe or maybe not stage when there's a question
-        mark of any sort outstanding. At the very heart of the Kanban board are the to-do items also
-        known as the backlog in various agile frameworks. These individual
-        items are all delivery focused and must deliver business value
-        directly or indirectly. For example, setting up a Kanban board is
-        a legitimate item but a meeting to discuss the options is merely
-        part of the main job. The tasks are business delivery focused
-        and not centred on activities. If an item on the backlog does not
-        contribute to business goals, it should be removed.
-        \item \textbf{Terminado}: totally complete with nothing more to do except reap
-        the rewards or accept the gratitude.
-        \item \textbf{Listas intermedias}: To do, In progress, Testing...
-    \end{itemize}
-    \item \textbf{Cartas}:
-\end{itemize}
-
-\subsection{Definiendo los criterios de finalización}
 
 \subsection{Justificación de la metodología}
 \change[inline]{Por último, la gestión del proyecto se realizará siguiendo la
