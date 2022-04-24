@@ -146,10 +146,15 @@ Para poder hacer uso de los principios y aplicar correctamente las prácticas de
 método, existen una serie de herramientas y artefactos comunes dentro de la
 metodología Kanban.
 
-\improvement[inline]{INSERTAR UNA IMAGEN DE UN TABLÓN KANBAN COMPLETO}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\linewidth]{5-Cuerpo/Chapter2/TablonKanban.png}
+    \caption{Ejemplo de un tablón kanban}
+    \label{fig:kanbanboard}
+\end{figure}
+\improvement{INSERTAR UNA IMAGEN DE UN TABLÓN KANBAN COMPLETO}
 
-Como se puede observar en la figura ()\urgent{PONER LA REFERENCIA A LA IMAGEN
-DEL TABLÓN KANBAN}, muchos de los elementos visibles ya
+Como se puede observar en la figura \ref{fig:kanbanboard}, muchos de los elementos visibles ya
 habían sido referenciados anteriormente. Sin embargo, se procederá a dar una
 explicación detallada de lo que representan y qué rol cumplen:
 
@@ -162,33 +167,38 @@ explicación detallada de lo que representan y qué rol cumplen:
     propio tablón kanban en función de su proceso de desarrollo y es a través de
     éste que se podrán calcular las métricas, encontrar los ciclos de
     retroalimentación y determinar qué se debe mejorar para maximizar la
-    eficiencia.
+    eficiencia. En la figura \ref{fig:kanbanboard} está representado por el
+    elemento $1$.
 
     \item \textbf{Listas o Columnas}:
     Para poder visualizar correctamente el flujo de trabajo dentro del tablón
     kanban se hacen uso de listas de tareas o columnas. Dichos elementos
     representarán los pasos que debe seguir una tarea para pasar por todo el
     flujo desde que se plantea como labor hasta que se finaliza. En el método se
-    dice que las tareas son \emph{tiradas} a la siguiente lista una vez que se
-    cumplen las condiciones de finalización de la columna en la que se
-    encuentra. Entre los tipos de columnas que se pueden encontrar están:
+    dice que las tareas son \emph{tiradas} (\emph{pulled} en inglés) a la
+    siguiente lista una vez que se cumplen las condiciones de finalización de la
+    columna en la que se encuentra. Entre los tipos de columnas que se pueden
+    encontrar están:
     \begin{itemize}
         \item \textbf{Backlog}: Contiene la lista de tareas que se plantean
         realizar, pero aún no se han empezado o que pueden terminar siendo
         descartados. Éstas son las ideas de lo que se quiere desarrollar, pero
         que aún no se han materializado en labor. Dichos elementos deberán estar
-        enfocados a contribuir con los objetivos del producto a implementar.
-        \item \textbf{Terminado}: Contiene la lista de tareas que se han dado
-        por finalizadas en su totalidad. Esta columna es la última del tablón
-        para el equipo y aquí es donde estarán todas las tareas completadas una
-        vez que han pasado por todo el flujo de desarrollo.
+        enfocados a contribuir con los objetivos del producto a implementar. En
+        la figura \ref{fig:kanbanboard} está representada por el elemento $4$.
         \item \textbf{Listas intermedias}: El tablón kanban, al depender mucho
         proceso del equipo y no poder ser estandarizado, hará uso también de
         distintas columnas intermedias entre el \emph{backlog} y la columna de
         tareas finalizadas. Dichas listas serán representativas del flujo de
         trabajo que sigue el grupo como tal para desarrollar el proyecto.
         Tipicamente se pueden encontrar columnas como: \emph{a diseñar}, \emph{a
-        empezar}, \emph{en progreso}, \emph{en verificación}, entre otras.
+        empezar}, \emph{en progreso}, \emph{en verificación}, entre otras. En la
+        figura \ref{fig:kanbanboard} están representadas por el elemento $5$.
+        \item \textbf{Terminado}: Contiene la lista de tareas que se han dado
+        por finalizadas en su totalidad. Esta columna es la última del tablón
+        para el equipo y aquí es donde estarán todas las tareas completadas una
+        vez que han pasado por todo el flujo de desarrollo. En la figura
+        \ref{fig:kanbanboard} está representada por el elemento $6$.
     \end{itemize}
 
     \item \textbf{WiP}: Con el fin de aplicar las prácticas de limitación y
@@ -196,25 +206,23 @@ explicación detallada de lo que representan y qué rol cumplen:
     que puede contener en un determinado momento. Si dicha lista llega a su
     límite, no se podrán traer tareas a ella hasta que se liberé de los labores
     que contiene. Normalmente dicho límite se escribe al lado del nombre de su
-    respectiva columna.
+    respectiva columna. En la figura \ref{fig:kanbanboard} está representado por el
+    elemento $2$.
 
     \item \textbf{Cartas}:
     Así como el tablón kanban contiene listas de trabajo, dichas columnas
     también contienen unos elementos conocidos como \emph{cartas}. Éstas
     representan las actividades y trabajos a realizar con el fin de avanzar con
     proyecto, siempre teniendo en cuenta que dichos elementos deben aumentar el
-    valor del producto y tienen que ser significados para su finalización.
+    valor del producto y tienen que ser significados para su finalización. En la
+    figura \ref{fig:kanbanboard} están representadas por el elemento $3$.
 \end{itemize}
 
-\subsection{Definiendo los criterios de finalización}
-
 \subsection{Métricas de flujo}
-\urgent{TRADUCIR Y FINALIZAR}
-% Orderly Disruption Limited, Daniel S. Vacanti, Inc. Offered for license under the Attribution
-% ShareAlike license of Creative Commons, accessible at http://creativecommons.org/licenses/by-
-% sa/4.0/legalcode and also described in summary form at http://creativecommons.org/licenses/by-sa/4.0/,
-% By using this Kanban GuideTM, you acknowledge that you have read and agree to be bound by the terms of
-% the Attribution ShareAlike license of Creative Commons.
+Para finalizar con el contenido teórico del método, se hablarán de las distintas
+métricas que se utilizan para determinar la eficiencia del proceso y los
+elementos  a mejorar según la metodología Kanban. Daniel S. Vacanti define en
+\cite{Daniel2022} la siguiente lista de medidas:
 
 \begin{itemize}
     \item \textbf{Trabajo en progreso}: Es el número de elementos o cartas de
@@ -228,18 +236,29 @@ explicación detallada de lo que representan y qué rol cumplen:
 \end{itemize}
 
 \subsection{Justificación de la metodología}
-\change[inline]{Por último, la gestión del proyecto se realizará siguiendo la
-metodología de desarrollo ágil Kanban para permitir construir de manera
-iterativa las distintas funcionalidades del proyecto. Hacer uso del método
-Kanban para el desarrollo y gestión del proyecto.}
 
-\change[inline]{No se puede definir una estimación de tiempo, por lo que se
-deberá usar una metodología ágil}
+\begin{markdown}
+* No se puede realizar una estimación de las tareas ni dedicaciones a priori.
+* Al ser un proyecto planteado por el estudiante, se espera mucha variabilidad
+en cuanto a requisitos y entregables a lo largo del desarrollo.
+* Debido a cuestiones de tiempo, la metodología debe permitir adaptarse
+fácilmente a cambios en el tiempo que se le puede dedicar al proyecto.
+* Debido a algunos aspectos que se desconocen en cuanto al alcance, el método a
+utilizar debe permitir adaptarse rápidamente a la integración de nuevo
+conocimiento.
+* El proyecto se caracteriza, entonces, por su alto nivel de desconocimiento y
+variabilidad en cuanto a requisitos, objetivos y supuestos. Se tiene que lo
+mejor es un desarrollo iterativo y ágil.
+
+\end{markdown}
+
 
 % -----------------------------------------------------------------------------
 
-\subsection{Trello como herramienta de gestión}\label{subsec:trello}
+\subsection{Adaptación de la metodología}\label{subsec:kanban_adaptacion}
+\urgent[inline]{Redacción rápida e introductoria a esta subsección}
 
+\change[inline]{
 Once the starting format of the Kanban board is agreed, the
 first and almost pivotal decision to be made is whether to go for
 a physical board or an electronic one. Both have their pros and
@@ -260,7 +279,6 @@ visit from the CEO or Finance Director within a week. For
 once they'll see what's really going on in the organisation
 without quizzing middle management or ploughing through
 turgid weekly reports.
-
 Despite our absolute preference for an old-fashioned physical
 board, there are times when an electronic board either makes
 more sense or is even the only viable option. When individuals
@@ -281,58 +299,82 @@ benefits of having a real board. But when all else fails there are
 plenty of electronic options with good coverage across the main
 devices. Some are completely free and all the rest offer a trial
 period, so try before you buy.
+}
+
+Se sacará la información de aquí: \cite{Brechner2015-dv} % Teoría aplicada (el
+de Xbox)
 
 \change[inline]{Uno de los artefactos es el tablón como tal. Aquí se define Trello como tablón online/virtual}
 \change[inline]{Definición de Trello y un poco de transfondo}
 
-Se sacará la información de aquí: \cite{Brechner2015-dv} % Teoría aplicada (el de Xbox)
-\subsubsection{Significado de las listas}
-\change[inline]{Uno de los artefactos son las listas. Aquí se definen las escogidas}
+\subsubsection{Definir y visualizar el flujo de trabajo}
+% Define aquí el tablón, las listas, las etiquetas y el formato de las cartas
 
-\begin{itemize}
-    \item \textbf{Backlog:} Tareas de la iteración en espera de ser empezadas
-    \item \textbf{To Do:} Tareas a realizarse
-    \item \textbf{Doing:} Tareas que se están realizando
-    \item \textbf{Testing:} Tareas que se están evaluando antes de darse por completadas
-    \item \textbf{Done:} Tareas de la iteración terminadas
-    \item \textbf{Approved:} Tareas discutidas y aprobadas
-\end{itemize}
+% \subsubsection{El tablón kanban}
+% \urgent[inline]{INSERTAR CAPTURA DEL TABLÓN}
+% \subsubsection{Significado de las listas}
+% \urgent{DEFINE LOS WIPS DE LAS COLUMNAS}
 
-\subsubsection{Formato de las cartas}
+% \begin{itemize}
+%     \item \textbf{Backlog}: La columna que contendrá la lista de tareas e ideas
+%    espera de ser empezadas en la iteración.
+%     \item \textbf{To Do}: Del inglés \emph{a hacer}, contiene la lista de
+%     tareas cuya labor ha sido empezada en la iteración.
+%     \item \textbf{Doing}: Del inglés \emph{en progreso}, contiene la lista de
+%     tareas cuya labor se está realizando en la iteración.
+%     \item \textbf{Testing}: Del inglés \emph{en verificación}, contiene la lista de
+%     tareas cuya labor se ha finalizado pero todavía se está determinando si
+%     cumplen con las condiciones de finalización para pasar a la lista de tareas
+%     terminadas.
+%     \item \textbf{Done}: Del inglés \emph{terminado}, contiene la lista de
+%     tareas cuya labor se ha dado por terminada y que están en espera de ser
+%     discutidas en la reunión de fin de iteración.
+%     \item \textbf{Approved}: Del inglés \emph{aprobado}, contiene la lista de
+%     tareas discutidas y cuya realización ha sido aceptada como adecuada para la
+%     finalización del proyecto.
+% \end{itemize}
 
-\change[inline]{Aquí se definen las cartas que son otro artefacto de Kanban. Conviene mejor usar capturas}
+% \subsubsection{Formato de las cartas}
 
-%! Aquí conviene mejor una captura
+% \change[inline]{Aquí se definen las cartas que son otro artefacto de Kanban. Conviene mejor usar capturas}
 
-% \begin{markdown}
-%     # Ge.P-1: Definición de la metodología de gestión
-%     **Iteraciones:** 2
-%     **Código:** FeI
-%     **Tarea:** 1
-%     **Tiempo Estimado:** 0.0
-%     **Tiempo Usado:** 0.0
-%     **Desviación:** 0.0
-%     **Descripción:** nan
-% \end{markdown}
+% %! Aquí conviene mejor una captura
 
-\subsubsection{Significado de etiquetas}
-\change[inline]{Un añadido que se puede utilizar son las etiquetas como artefacto. Aquí se definen}
-\begin{itemize}
-    \item \textbf{Bug:} Cuando se detecta un error y se debe arreglar
-    \item \textbf{Bloqueado:} Cuando una tarea no se puede completar debido a
-    otras circunstancias
-    \item \textbf{Pendiente:} Abreviado de “Pendiente de Retroalimentación”.
-    Indica que esta tarea debe discutirse en una reunión
-    \item \textbf{No aceptada:} Indica que la tarea no ha sido aceptada para
-    continuar en la siguiente iteración y debe retrabajarse, cambiarse o
-    descartarse.
-\end{itemize}
+% % \begin{markdown}
+% %     # Ge.P-1: Definición de la metodología de gestión
+% %     **Iteraciones:** 2
+% %     **Código:** FeI
+% %     **Tarea:** 1
+% %     **Tiempo Estimado:** 0.0
+% %     **Tiempo Usado:** 0.0
+% %     **Desviación:** 0.0
+% %     **Descripción:** nan
+% % \end{markdown}
 
-\subsubsection{Criterios de movimiento de listas}
-\change[inline]{Se comentó que hay que definir el concepto de “finalizado” para cada lista. Aquí se hace eso}
-% Qué cosas se cumplen para que una carta se mueva a la siguiente lista. Agile Project Managament With Kanban pag. 24 (set limits on chaos and Step 4: Define done)
-% Pull Criteria
+% \subsubsection{Significado de etiquetas}
+% \change[inline]{Un añadido que se puede utilizar son las etiquetas como artefacto. Aquí se definen}
+% \begin{itemize}
+%     \item \textbf{Bug:} Cuando se detecta un error y se debe arreglar
+%     \item \textbf{Bloqueado:} Cuando una tarea no se puede completar debido a
+%     otras circunstancias
+%     \item \textbf{Pendiente:} Abreviado de “Pendiente de Retroalimentación”.
+%     Indica que esta tarea debe discutirse en una reunión
+%     \item \textbf{No aceptada:} Indica que la tarea no ha sido aceptada para
+%     continuar en la siguiente iteración y debe retrabajarse, cambiarse o
+%     descartarse.
+% \end{itemize}
 
+\subsubsection{Limitar y manejar el trabajo en progreso}
+% Definir aquí los WiPs
+\subsubsection{Hacer explícitas las políticas de proceso}
+% Criterios de finalización aquí
 
+% \subsubsection{Criterios de movimiento de listas}
+% \change[inline]{Se comentó que hay que definir el concepto de “finalizado” para cada lista. Aquí se hace eso}
+% % Qué cosas se cumplen para que una carta se mueva a la siguiente lista. Agile Project Managament With Kanban pag. 24 (set limits on chaos and Step 4: Define done)
+% % Pull Criteria
 
+% \subsubsection{Criterios de bloqueo de tareas}
 
+\subsubsection{Implementar ciclos de retroalimentación}
+% Reuniones de fin de iteración y de replanificación
