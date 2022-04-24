@@ -53,18 +53,18 @@
 % this next section (till \makeatother) makes sure that blank pages
 %% are actually completely blank, cause they're not usually
 \makeatletter % Necesario para hacer que @ tenga el significado adecuado
-\def\cleardoublepage
+\def\cleardoublepage%
 {
 \clearpage
-\if@twoside
-    \ifodd
-        \c@page
+\if@twoside%
+    \ifodd%
+        \c@page%
     \else
         \hbox{}
         \vspace*{\fill}
         \thispagestyle{empty}
         \newpage
-        \if@twocolumn
+        \if@twocolumn%
             \hbox{}
             \newpage
         \fi
@@ -83,39 +83,39 @@
 
 % Del estilo de los apartados seccionadores (capítulos, secciones, ...):
 \renewcommand{\thepart}{\arabic{part}}
-\titleformat
+\titleformat%
     {\part} % command (depth=-1)
     [display]  % shape
-    {\bfseries \Large} % format
-    {\filcenter \Huge\MakeUppercase{\partname} \Huge\thepart} % label
+    {\bfseries\Large} % format
+    {\filcenter\Huge\MakeUppercase{\partname} \Huge\thepart} % label
     {4ex}
     {%marra
         \vspace{2ex}%
-        \filcenter \huge \filright
+        \filcenter\huge\filright%
     } % before-code
     [
         \vspace{2ex}%
     ] % after-code
 
-\titleformat
+\titleformat%
     {\chapter} % command (depth=0)
     [display] % shape
     {\bfseries\Large}
     {
-        \filleft \Large\MakeUppercase{\chaptertitlename} \Large\thechapter
+        \filleft\Large\MakeUppercase{\chaptertitlename}\Large\thechapter%
     } % label
     {2ex} % sep
     {
-        \titlerule
+        \titlerule%
     	\vspace{1ex}%
-    	\filright
+    	\filright%
 	} % before-code
     [
         \vspace{2ex}%
-        \titlerule
+        \titlerule%
     ] % after-code
 
-\titleformat
+\titleformat%
     {\section} % command (depth=1)
     [hang] % shape
     {\normalfont\bfseries} % format
@@ -126,7 +126,7 @@
     [
     ] % after-code
 
-\titleformat
+\titleformat%
     {\subsection} % command (depth=2)
     [hang] % shape
     {\normalfont\bfseries} % format
@@ -137,7 +137,7 @@
     [
     ] % after-code
 
-\titleformat
+\titleformat%
     {\subsubsection} % command (depth=3)
     [hang] % shape
     {\normalfont\bfseries} % format
@@ -148,7 +148,7 @@
     [
     ] % after-code
 
-\titleformat
+\titleformat%
     {\paragraph} % command (depth=4)
     [hang] % shape
     {\normalfont\bfseries} % format
@@ -159,7 +159,7 @@
     [
     ] % after-code
 
-\titleformat
+\titleformat%
     {\subparagraph} % command (depth=5)
     [runin] % shape
     {\normalfont\bfseries} % format
@@ -195,8 +195,7 @@
 % *********************** Global paragraph indentation and line spacing/strech ******************************
 \frenchspacing % To treat all spaces equally
 \widowpenalty=1000 %
-
-\raggedbottom
+\raggedbottom% Cambia el espaciado del contenido de las páginas (sin esto las listas se expanden para ocupar toda la página)
 
 % \setlength{\parskip}{1.5ex plus 0.5ex minus 0.5ex}   % establece separacion entre parrafos a 8 puntos
 
