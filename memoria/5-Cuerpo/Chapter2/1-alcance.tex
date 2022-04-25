@@ -1,37 +1,38 @@
 \section{Alcance}\label{sec:alcance}
 
 El alcance de este proyecto incluye el trabajo necesario para diseñar,
-implementar y documentar un framework de modelado y desarrollo de simulación de
-sistemas dinámicos discretos basados en eventos. Dicho framework se dividirá en
-tres módulos principales:
+implementar y documentar un framework y una aplicación de modelado y desarrollo
+de simulación de sistemas dinámicos discretos basados en eventos. La división
+del trabajo como tal se hará a través de los siguientes tres módulos principales:
 \begin{itemize}
-    \item \textbf{Lenguaje}: Un lenguaje de modelado específico pensado para ser usado
-    por usuarios que no tengan mucha experiencia en programación. Se hará uso de
-    las herramientas de desarrollo de compiladores Flex y Bison para generar un
-    transpilador que traduzca ficheros de este lenguaje a código Python. A
-    través de él se plantea:
+    \item \textbf{Lenguaje}: Un lenguaje de modelado específico pensado para ser
+    usado dentro de la propia aplicación del producto por usuarios que no tengan
+    mucha experiencia en programación. Este lenguaje se usará sólo en
+    situaciones específicas dentro del flujo de eventos para indicar conjuntos
+    de expresiones simples que se deben evaluar. Se hará uso de las herramientas
+    de desarrollo de compiladores Flex y Bison para generar un transpilador que
+    traduzca ficheros de este lenguaje a código Python. A través de él se
+    plantea:
     \begin{itemize}
-        \item Permitir la rápida implementación de este tipo de modelos a través
-        de grafos de sucesos.
         \item Permitir que el programador del lenguaje se encargue sólo de
-        realizar las implementaciones pertinentes al sistema de simulación que
-        desee desarrollar:
+        realizar las especificaciones pertinentes a algunas partes de la
+        simulación que se desee desarrollar:
         \begin{itemize}
-            \item Especificación de las variables globales, variables de
-            entrada, contadores estadísticos y medidas de rendimiento propias
-            del modelo.
-            \item Inclusión de eventos adicionales y sus acciones
-            correspondientes.
-            \item Creación y eliminación de eventos en función de tiempo y
-            condiciones lógicas.
-            \item Inclusión de código adicional escrito directamente en Python
-            en caso de ser necesario.\urgent{Cambiar redacción}
+            \item Especificación de expresiones, atributos y valores a usar
+            en distintas partes de la simulación.
+            \item Especificación de las métricas de salida de la simulación a
+            desarrollar.
+            \item Especificación de los generadores de datos asociados a la
+            simulación a crear.
+            \item Especificación de las acciones asociadas a los eventos del
+            simulador.
+            \item Especificación de la condición de parada del simulador.
         \end{itemize}
     \end{itemize}
     \item \textbf{Núcleo}: Una serie de módulos que implementarán un microframework de
     simulación de este tipo de sistemas en específico para Python, pensado para
-    ser usado por programadores y para acotar la traducción del nuevo lenguaje.
-    A través de él se plantea:
+    ser usado por programadores y acotar la traducción del nuevo lenguaje. A
+    través de él se plantea:
     \begin{itemize}
         \item Permitir que la traducción del lenguaje incluya dentro del fichero
         generado las estructuras de datos, funciones y procedimientos que tienen
@@ -74,7 +75,8 @@ resulta viable}
     \item Diseñar un nuevo lenguaje de modelado y simulación de sistemas
     dinámicos discretos basados en eventos usando las herramientas de desarrollo
     de procesadores de lenguaje Flex y Bison.\improvement{Se necesitan hacer
-    cambios en cuanto a las herramientas a usar}
+    cambios en cuanto a las herramientas a usar. Existe una herramienta que
+    aplica Flex/Bison dentro de Python como tal}
     \item Diseñar, implementar y verificar una serie de módulos y
     funcionalidades realizadas en Python con el fin de generar un microframework
     para simular estos mismos sistemas.
@@ -82,7 +84,8 @@ resulta viable}
     producto a Python usando las características del objetivo anterior.
     \item Diseñar, implementar y verificar una serie de operaciones accesibles
     desde una CLI de cara a ser usadas para la gestión, configuración y
-    ejecución parametrizada de simulaciones realizadas con el producto.
+    ejecución parametrizada de simulaciones realizadas con el producto. \improvement{La utilización de una CLI ahora no
+    resulta viable}
     \item Implementar distintas técnicas de análisis de salidas, experimentación
     y optimización de modelos dentro del núcleo del framework.
     \item Desarrollar un manual de usuario que contendrá toda la documentación
@@ -99,26 +102,33 @@ dedicación total máximo de 300 horas.
 
 \subsubsection{Requisitos funcionales}
 \urgent{Requisitos funciones = lo que hace la aplicación. Sobre la funcionalidades, qué hace, lo que hace, cómo lo tiene que hacer}
-
-\begin{markdown}
-* 1
-* 2
-* 3
-* 4
-* 5
-* La interfaz gráfica ofrecerá ayudas al posicionar el ratón sobre los elementos
-\end{markdown}
-
+\begin{itemize}
+    \item El producto consistirá de una interfaz gráfica a modo de aplicación de escritorio usando Python y Qt.
+    \item Procesará los dos eventos mínimos del grafo de eventos de la simulación: \emph{Inicio} y \emph{Final}.
+    \item Los dos eventos mínimos del grafo de eventos no se podrán eliminar, sólo configurar.
+    \item Se podrán añadir y eliminar eventos del grafo de eventos
+    \item Se verificará que los valores de las métricas de la simulación y de los generadores de datos cumplan con sus restricciones de tipo y rango.
+    \item Se permitirá tanto la ejecución de la simulación dentro de la interfaz como la
+    generación de un fichero ejecutable en Python que será independiente de la
+    aplicación y hará uso del framework a genera.
+\end{itemize}
 \subsubsection{Requisitos no-funcionales}
 \urgent{TERMINAR}
-
 \begin{markdown}
-* 1
-* 2
-* 3
-* 4
-* 5
-* 6
+* El sistema no puede devolver datos erróneos a excepción que se aclare que es una versión beta y que los datos no son de fiar, blabla (fiabilidad)
+* El código fuente está disponible a través de un repositorio github bajo licencia blabla (disponibilidad)
+* La interfaz está diseñada siguiendo los diez principios de usabilidad heurística (usabilidad)
+* Él sistema es responsable de verificar los datos que le ingresan como prueba para evitar errores de ejecución (robustez)
+* se verifican los flujos de eventos para evitar cualquier error de interfaz del usuario
+* como no se requiere registro para el uso de la aplicación, no se almacenarán datos personales ni de ningún otro tipo que comprometan la privacidad y seguridad del usuario (seguridad)
+* el software está creado de tal forma que permite su continuo desarrollo en términos de funcionalidades, utilizando clases y documentando blabla (escalabilidad) 
+* el programa puede ser ejecutado en plataformas Linux versiones Debian, Ubuntu, …, Windows a partir de su versión 8…, Mac OS a partir de su versión OS Mavericks. Blabla (portabilidad)
+* Los nuevos desarrollos mantendrán backward compatibility (mantenibilidad)
+* La aplicación se construye en módulos independientes funcionalmente que permite utilizar funciones en otros lugares (reusabilidad)
+* Se defineuna tabla con el patrón de nombres de variables, constantes, funciones, clases, etc y toda la aplicación sigue esa sintaxis (legibilidad)
+* El idioma de la aplicación es inglés? español?
+* Los tipos ya definidos son Var, int…
+* La aplicación tiene un tiempo promedio de respuesta de no más de xx segundos y maneja hasta un juego de xxx datos (rendimiento)
 \end{markdown}
 
 % Sin embargo, se pueden listar otros requisitos específicos:
