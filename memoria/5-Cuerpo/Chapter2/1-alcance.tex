@@ -51,10 +51,10 @@ del trabajo como tal se hará a través de los siguientes tres módulos principa
             ésta.
         \end{itemize}
     \end{itemize}
-    \item \textbf{CLI}: Una interfaz de comandos por terminal que se usará para
+    \item \textbf{GUI}: La aplicación gráfica de escritorio que se usará para
     gestionar, configurar y ejecutar los proyectos desarrollados con este
-    framework. \improvement{La utilización de una CLI ahora no
-    resulta viable}
+    framework a modo de permitir a un usuario no familiarizado con la
+    programación el uso de estas herramientas.
 \end{itemize}
 
 
@@ -66,9 +66,9 @@ del trabajo como tal se hará a través de los siguientes tres módulos principa
 \subsubsection{Objetivo general}
 Generar un lenguaje de modelado de simulación de sistemas dinámicos discretos
 basados en eventos junto con un transpilador que lo traduzca a Python, un
-microframework para acotar la traducción y un CLI para gestionar proyectos
-desarrollados con este producto. \improvement{La utilización de una CLI ahora no
-resulta viable}
+microframework para acotar la traducción y un aplicación gráfica para gestionar
+proyectos desarrollados con este producto. \improvement{La utilización de una CLI ahora no
+resulta viable, se cambia a GUI}
 
 \subsubsection{Objetivos específicos}
 \begin{enumerate}
@@ -82,10 +82,10 @@ resulta viable}
     para simular estos mismos sistemas.
     \item Implementar y verificar un transpilador que traduzca el lenguaje del
     producto a Python usando las características del objetivo anterior.
-    \item Diseñar, implementar y verificar una serie de operaciones accesibles
-    desde una CLI de cara a ser usadas para la gestión, configuración y
-    ejecución parametrizada de simulaciones realizadas con el producto. \improvement{La utilización de una CLI ahora no
-    resulta viable}
+    \item Diseñar, implementar y verificar una aplicación gráfica para
+    escritorio de cara a ser usadas para la gestión, configuración y
+    ejecución parametrizada de simulaciones realizadas con el producto.
+    \improvement{La utilización de una CLI ahora no resulta viable}
     \item Implementar distintas técnicas de análisis de salidas, experimentación
     y optimización de modelos dentro del núcleo del framework.
     \item Desarrollar un manual de usuario que contendrá toda la documentación
@@ -103,56 +103,63 @@ dedicación total máximo de 300 horas.
 \subsubsection{Requisitos funcionales}
 \urgent{Requisitos funciones = lo que hace la aplicación. Sobre la funcionalidades, qué hace, lo que hace, cómo lo tiene que hacer}
 \begin{itemize}
-    \item El producto consistirá de una interfaz gráfica a modo de aplicación de escritorio usando Python y Qt.
-    \item Procesará los dos eventos mínimos del grafo de eventos de la simulación: \emph{Inicio} y \emph{Final}.
-    \item Los dos eventos mínimos del grafo de eventos no se podrán eliminar, sólo configurar.
-    \item Se podrán añadir y eliminar eventos del grafo de eventos
-    \item Se verificará que los valores de las métricas de la simulación y de los generadores de datos cumplan con sus restricciones de tipo y rango.
+    \item El producto consistirá de una de una interfaz gráfica a modo de
+    aplicación de escritorio usando PyQt y un framework de desarrollo para
+    Python.
+    \item Se podrán añadir y eliminar las distintas variables del
+    simulador a través de una lista.
+    \item Se podrá especificar el grupo, el tipo, el rango y el valor por
+    defecto de las variables.
+    \item Se podrán definir funciones que representen las métricas de salida del
+    moda simular.
+    \item El simulador procesará los dos eventos mínimos del grafo de eventos de
+    la simulación: \emph{Inicio} y \emph{Final}.
+    \item Los dos eventos mínimos del grafo de eventos no se podrán eliminar,
+    sólo configurar.
+    \item Se podrán añadir y eliminar eventos del grafo de eventos.
+    \item Se podrán asociar acciones a los eventos de la simulación.
+    \item Se podrán añadir transiciones de creación y eliminación entre eventos.
+    \item Se podrán configurar las transiciones entre eventos del modelo.
+    \item Se podrá aplicar un algoritmo de simplificación de grafo para reducir
+    la complejidad del simulador modelado.
+    \item Se podrán utilizar expresiones, identificadores y constantes de un
+    lenguaje reducido diseñado específicamente para el simulador.
+    \item Se verificará que los valores de las métricas de la simulación y de
+    los generadores de datos cumplan con sus restricciones de tipo y rango.
+    \item Se permitirá configurar cómo se mostrará la salida del simulador desde
+    la interfaz gráfica.
     \item Se permitirá tanto la ejecución de la simulación dentro de la interfaz como la
     generación de un fichero ejecutable en Python que será independiente de la
     aplicación y hará uso del framework a genera.
+    \item La aplicación mostrará ayudas cuando el usuario posicione el ratón
+    sobre un elemento con el fin de aclarar cualquier duda que tenga sobre sus
+    detalles de uso o definición.
 \end{itemize}
 \subsubsection{Requisitos no-funcionales}
-\urgent{TERMINAR}
-\begin{markdown}
-* El sistema no puede devolver datos erróneos a excepción que se aclare que es una versión beta y que los datos no son de fiar, blabla (fiabilidad)
-* El código fuente está disponible a través de un repositorio github bajo licencia blabla (disponibilidad)
-* La interfaz está diseñada siguiendo los diez principios de usabilidad heurística (usabilidad)
-* Él sistema es responsable de verificar los datos que le ingresan como prueba para evitar errores de ejecución (robustez)
-* se verifican los flujos de eventos para evitar cualquier error de interfaz del usuario
-* como no se requiere registro para el uso de la aplicación, no se almacenarán datos personales ni de ningún otro tipo que comprometan la privacidad y seguridad del usuario (seguridad)
-* el software está creado de tal forma que permite su continuo desarrollo en términos de funcionalidades, utilizando clases y documentando blabla (escalabilidad) 
-* el programa puede ser ejecutado en plataformas Linux versiones Debian, Ubuntu, …, Windows a partir de su versión 8…, Mac OS a partir de su versión OS Mavericks. Blabla (portabilidad)
-* Los nuevos desarrollos mantendrán backward compatibility (mantenibilidad)
-* La aplicación se construye en módulos independientes funcionalmente que permite utilizar funciones en otros lugares (reusabilidad)
-* Se defineuna tabla con el patrón de nombres de variables, constantes, funciones, clases, etc y toda la aplicación sigue esa sintaxis (legibilidad)
-* El idioma de la aplicación es inglés? español?
-* Los tipos ya definidos son Var, int…
-* La aplicación tiene un tiempo promedio de respuesta de no más de xx segundos y maneja hasta un juego de xxx datos (rendimiento)
-\end{markdown}
-
-% Sin embargo, se pueden listar otros requisitos específicos:
-
-% \subsubsection{Caracterización de la memoria}
-% \begin{itemize}
-%     \item Debe ser bien citado y referenciado.
-%     \item Apartado de calidad.
-% \end{itemize}
-
-% \subsubsection{Caracterización del framework}
-% \begin{itemize}
-%     \item Un lenguaje verificado que no pete a la primera
-%     \item El resultado son métricas en un dataframe (o varios si harás lo de
-%     validación)
-%     \item Cumplir con la línea base de calidad definida en el apartado (...)
-% \end{itemize}
-
-% \subsubsection{Caracterización del manual}
-% \begin{itemize}
-%     \item Utilizar referencias a recursos ajenas
-% \end{itemize}
-
-% \subsubsection{Licencia del producto}
+\begin{itemize}
+    \item El código fuente de la implementación, la memoria y el manual estará
+    disponible a través de un repositorio GitHub.
+    \item La aplicación es responsable de verificar los datos que se le especifican
+    para evitar errores de ejecución.
+    \item Como no se requiere registro para el uso de la aplicación, no se
+    almacenarán datos personales ni de ningún otro tipo que comprometan la
+    privacidad y seguridad del usuario.
+    \item La aplicación y el framework se construyen en módulos independientes
+    funcionalmente que permite utilizar funciones en otros lugares.
+    \item No se permitirá la creación de nuevos tipos de datos dentro de la
+    aplicación.
+    \item El idioma en el que estará la aplicación será el inglés.\change{Igual
+    conviene discutir esto}
+    \item El software será creado usando el lenguaje de programación Python, lo
+    cual asegurará que sea multiplataforma.
+\end{itemize}
+% \begin{markdown}
+% * El sistema no puede devolver datos erróneos a excepción que se aclare que es una versión beta y que los datos no son de fiar, blabla (fiabilidad)
+% * se verifican los flujos de eventos para evitar cualquier error de interfaz del usuario
+% * el software está creado de tal forma que permite su continuo desarrollo en términos de funcionalidades, utilizando clases y documentando blabla (escalabilidad)
+% * Los nuevos desarrollos mantendrán backward compatibility (mantenibilidad)
+% * Se define una tabla con el patrón de nombres de variables, constantes, funciones, clases, etc y toda la aplicación sigue esa sintaxis (legibilidad)
+% \end{markdown}
 
 
 % -----------------------------------------------------------------------------
@@ -230,10 +237,9 @@ principales del proyecto. Podemos desglosarlo en tres paquetes más pequeños:
         \item \textbf{Core (Pr.Fr.Co):} Este paquete contendrá todas las
         tareas relacionadas al diseño y desarrollo del propio núcleo del
         framework.
-        \item \textbf{CLI (Pr.Fr.Cli):} Este paquete contendrá todas las
-        tareas relacionadas al diseño y desarrollo de la interfaz de comandos
-        proporcionada para facilitar la gestión de proyectos realizados con el
-        a generar. \improvement{La utilización de una CLI ahora no
+        \item \textbf{GUI (Pr.Fr.Gui):} Este paquete contendrá todas las
+        tareas relacionadas al diseño y desarrollo de la aplicación gráfica y su
+        integración con el microframework. \improvement{La utilización de una CLI ahora no
         resulta viable}
     \end{itemize}
     \item \textbf{Manual (Pr.Ma):} Este paquete de trabajo agrupará todas las
